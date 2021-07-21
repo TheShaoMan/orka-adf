@@ -96,7 +96,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ADLS_Lego_Themes')]",
+			"name": "[concat(parameters('factoryName'), '/ADLS_Lego')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -111,17 +111,20 @@
 					}
 				},
 				"annotations": [],
-				"type": "Parquet",
+				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@dataset().FileName",
+							"value": "@{dataset().FileName}.csv",
 							"type": "Expression"
 						},
 						"fileSystem": "lego"
 					},
-					"compressionCodec": "none"
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
 				},
 				"schema": []
 			},
@@ -130,41 +133,29 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ASQL_Lego_Themes')]",
+			"name": "[concat(parameters('factoryName'), '/ASQL_Lego')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "ASQL_orka_Entertainment",
 					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"FileName": {
+						"type": "String",
+						"defaultValue": "FileName"
+					}
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
 					"schema": "lego",
-					"table": "themes"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ASQL_orka_Entertainment')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_bda')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ASQL_orka_Entertainment",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "orka",
-					"table": "test"
+					"table": {
+						"value": "@dataset().FileName",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": [
@@ -208,69 +199,87 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/HTTP_Lego_Themes')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
+			"name": "[concat(parameters('factoryName'), '/Lego_ADLS_to_ASQL_Themes')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"linkedServiceName": {
-					"referenceName": "HTTP_Rebrickable",
-					"type": "LinkedServiceReference"
+				"description": "Extract Themes data from Azure Data Lake Storage, add a column, and load the data into Azure SQL Database",
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ADLS_Lego",
+								"type": "DatasetReference",
+								"parameters": {
+									"FileName": {
+										"value": "@{pipeline().parameters.FileName}.csv",
+										"type": "Expression"
+									}
+								}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "ASQL_Lego",
+								"type": "DatasetReference",
+								"parameters": {
+									"FileName": "FileName"
+								}
+							}
+						]
+					}
+				],
+				"parameters": {
+					"FileName": {
+						"type": "String",
+						"defaultValue": "FileName"
+					}
 				},
 				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "HttpServerLocation",
-						"relativeUrl": "themes.csv.gz"
-					},
-					"columnDelimiter": ",",
-					"rowDelimiter": "\n",
-					"compressionCodec": "gzip",
-					"compressionLevel": "Optimal",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "id",
-						"type": "String"
-					},
-					{
-						"name": "name",
-						"type": "String"
-					},
-					{
-						"name": "parent_id",
-						"type": "String"
-					}
-				]
+				"lastPublishTime": "2021-07-19T07:23:15Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/HTTP_Rebrickable')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_bda')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "SensorTower",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "HttpServerLocation",
-						"relativeUrl": "ios/search_entities?entity_type=app&term=Lyft&auth_token=LyrjK-Gg2cBq8ZcrSwWv"
-					}
-				},
-				"schema": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/SensorTower')]"
+				"[concat(variables('factoryId'), '/datasets/ADLS_Lego')]",
+				"[concat(variables('factoryId'), '/datasets/ASQL_Lego')]"
 			]
 		},
 		{
@@ -280,8 +289,8 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy Themes from HTTP to ADLS",
-						"description": "Copy themes.csv from Rebrickable to Azure Data Lake Storage",
+						"name": "Copy CSV from HTTP to ADLS",
+						"description": "Copy File from Rebrickable to Azure Data Lake Storage",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -294,11 +303,11 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "themes.csv.gz"
+								"value": "@{pipeline().parameters.FileName}.csv"
 							},
 							{
 								"name": "Destination",
-								"value": "lego//themes.parquet"
+								"value": "lego//@{pipeline().parameters.FileName}.csv"
 							}
 						],
 						"typeProperties": {
@@ -314,15 +323,36 @@
 								}
 							},
 							"sink": {
-								"type": "ParquetSink",
+								"type": "DelimitedTextSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings"
 								},
 								"formatSettings": {
-									"type": "ParquetWriteSettings"
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
 								}
 							},
 							"enableStaging": false,
+							"enableSkipIncompatibleRow": true,
+							"logSettings": {
+								"enableCopyActivityLog": true,
+								"copyActivityLogSettings": {
+									"logLevel": "Warning",
+									"enableReliableLogging": false
+								},
+								"logLocationSettings": {
+									"linkedServiceName": {
+										"referenceName": "ADLS_orka",
+										"type": "LinkedServiceReference"
+									},
+									"path": {
+										"value": "lego/errors/@pipeline().parameters.FileName.csv",
+										"type": "Expression"
+									}
+								}
+							},
+							"dataIntegrationUnits": 2,
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
@@ -361,10 +391,13 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "ADLS_Lego_Themes",
+								"referenceName": "ADLS_Lego",
 								"type": "DatasetReference",
 								"parameters": {
-									"FileName": "FileName"
+									"FileName": {
+										"value": "@pipeline().parameters.FileName",
+										"type": "Expression"
+									}
 								}
 							}
 						]
@@ -381,90 +414,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/HTTP_Lego')]",
-				"[concat(variables('factoryId'), '/datasets/ADLS_Lego_Themes')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Lego_Themes')]",
-			"type": "Microsoft.DataFactory/factories/dataflows",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "MappingDataFlow",
-				"typeProperties": {
-					"sources": [
-						{
-							"dataset": {
-								"referenceName": "ADLS_Lego_Themes",
-								"type": "DatasetReference"
-							},
-							"name": "ADLSLegoThemes"
-						}
-					],
-					"sinks": [
-						{
-							"dataset": {
-								"referenceName": "ASQL_Lego_Themes",
-								"type": "DatasetReference"
-							},
-							"name": "ASQLLegoThemes"
-						}
-					],
-					"transformations": [
-						{
-							"name": "AddLoadDate"
-						}
-					],
-					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'parquet',\n\twildcardPaths:['themes.parquet']) ~> ADLSLegoThemes\nADLSLegoThemes derive(load_date = currentDate()) ~> AddLoadDate\nAddLoadDate sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\ttruncate:true,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> ASQLLegoThemes"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ADLS_Lego_Themes')]",
-				"[concat(variables('factoryId'), '/datasets/ASQL_Lego_Themes')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Lego_ADLS_to_ASQL_Themes')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Extract Themes data from Azure Data Lake Storage, add a column, and load the data into Azure SQL Database",
-				"activities": [
-					{
-						"name": "Load Themes from ADLS to ASQL",
-						"type": "ExecuteDataFlow",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "1.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"dataflow": {
-								"referenceName": "Lego_Themes",
-								"type": "DataFlowReference",
-								"parameters": {},
-								"datasetParameters": {
-									"ADLSLegoThemes": {},
-									"ASQLLegoThemes": {}
-								}
-							},
-							"staging": {},
-							"compute": {
-								"coreCount": 8,
-								"computeType": "General"
-							},
-							"traceLevel": "Fine"
-						}
-					}
-				],
-				"annotations": [],
-				"lastPublishTime": "2021-07-19T07:23:15Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/dataflows/Lego_Themes')]"
+				"[concat(variables('factoryId'), '/datasets/ADLS_Lego')]",
+				"[concat(variables('factoryId'), '/linkedServices/ADLS_orka')]"
 			]
 		},
 		{
