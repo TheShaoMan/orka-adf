@@ -5,12 +5,21 @@
 			"referenceName": "ASQL_orka_Entertainment",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FileName": {
+				"type": "String",
+				"defaultValue": "FileName"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
 			"schema": "lego",
-			"table": "themes"
+			"table": {
+				"value": "@dataset().FileName",
+				"type": "Expression"
+			}
 		}
 	}
 }

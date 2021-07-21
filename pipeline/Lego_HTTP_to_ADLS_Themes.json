@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy Themes from HTTP to ADLS",
-				"description": "Copy themes.csv from Rebrickable to Azure Data Lake Storage",
+				"name": "Copy CSV from HTTP to ADLS",
+				"description": "Copy File from Rebrickable to Azure Data Lake Storage",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
