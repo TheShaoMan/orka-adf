@@ -206,7 +206,8 @@
 				"description": "Extract Themes data from Azure Data Lake Storage, add a column, and load the data into Azure SQL Database",
 				"activities": [
 					{
-						"name": "Copy data1",
+						"name": "Copy data from ADLS to ASQL",
+						"description": "Copy data from Azure Data Lake Storage to Azure SQL Server",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -262,7 +263,10 @@
 								"referenceName": "ASQL_Lego",
 								"type": "DatasetReference",
 								"parameters": {
-									"FileName": "FileName"
+									"FileName": {
+										"value": "@{pipeline().parameters.FileName}.csv",
+										"type": "Expression"
+									}
 								}
 							}
 						]
@@ -290,7 +294,7 @@
 				"activities": [
 					{
 						"name": "Copy CSV from HTTP to ADLS",
-						"description": "Copy File from Rebrickable to Azure Data Lake Storage",
+						"description": "Copy CSV from Rebrickable to Azure Data Lake Storage",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
