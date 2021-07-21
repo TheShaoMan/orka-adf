@@ -36,15 +36,6 @@
 							"skipLineCount": "0"
 						}
 					},
-					"sink": {
-						"type": "ParquetSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "ParquetWriteSettings"
-						}
-					},
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
@@ -79,15 +70,6 @@
 								"value": "@pipeline().parameters.FileName",
 								"type": "Expression"
 							}
-						}
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "ADLS_Lego_Themes",
-						"type": "DatasetReference",
-						"parameters": {
-							"FileName": "FileName"
 						}
 					}
 				]
