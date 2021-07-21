@@ -1,0 +1,16 @@
+{
+	"name": "ASQL_Lego",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ASQL_orka_Entertainment",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "lego",
+			"table": "themes"
+		}
+	}
+}
