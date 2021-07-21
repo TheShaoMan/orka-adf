@@ -17,11 +17,11 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "themes.csv.gz"
+						"value": "@{pipeline().parameters.FileName}.csv"
 					},
 					{
 						"name": "Destination",
-						"value": "lego//themes.parquet"
+						"value": "lego//@{pipeline().parameters.FileName}.csv"
 					}
 				],
 				"typeProperties": {
@@ -36,7 +36,37 @@
 							"skipLineCount": "0"
 						}
 					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
 					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Warning",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "ADLS_orka",
+								"type": "LinkedServiceReference"
+							},
+							"path": {
+								"value": "lego/errors/@pipeline().parameters.FileName.csv",
+								"type": "Expression"
+							}
+						}
+					},
+					"dataIntegrationUnits": 2,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
@@ -64,6 +94,18 @@
 				"inputs": [
 					{
 						"referenceName": "HTTP_Lego",
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": {
+								"value": "@pipeline().parameters.FileName",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ADLS_Lego",
 						"type": "DatasetReference",
 						"parameters": {
 							"FileName": {
