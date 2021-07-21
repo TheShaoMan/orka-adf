@@ -1,0 +1,9 @@
+{
+	"name": "orka-adf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8bff821b-c0ca-45b5-8958-c1c0f61c02d1",
+		"tenantId": "55329169-2704-4cf6-9c00-2ef5ed34d405"
+	}
+}
