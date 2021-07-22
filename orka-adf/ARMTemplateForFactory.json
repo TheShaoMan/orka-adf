@@ -458,6 +458,51 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ADLS_Lego_ConfigurationFile')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLS_orka",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "LegoConfigurationFile.csv",
+						"fileSystem": "lego"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "SourceSystem",
+						"type": "String"
+					},
+					{
+						"name": "SourceFileName",
+						"type": "String"
+					},
+					{
+						"name": "SourceFileExtension",
+						"type": "String"
+					},
+					{
+						"name": "IsActive",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ADLS_orka')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ASQL_Lego')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
