@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@variables('Files')",
+						"value": "activity('Lookup Configuration File').output.value",
 						"type": "Expression"
 					},
 					"activities": [
@@ -33,7 +33,7 @@
 								"waitOnCompletion": true,
 								"parameters": {
 									"FileName": {
-										"value": "@item()",
+										"value": "@item().SourceFileName",
 										"type": "Expression"
 									}
 								}
