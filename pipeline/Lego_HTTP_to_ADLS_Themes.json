@@ -100,13 +100,7 @@
 				"outputs": [
 					{
 						"referenceName": "ADLS_Lego",
-						"type": "DatasetReference",
-						"parameters": {
-							"FileName": {
-								"value": "@(pipeline().parameters.FileName).csv",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				]
 			}
