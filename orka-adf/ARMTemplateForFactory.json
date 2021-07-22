@@ -219,9 +219,7 @@
 							{
 								"referenceName": "HTTP_Lego",
 								"type": "DatasetReference",
-								"parameters": {
-									"FileName": "colors.csv.gz"
-								}
+								"parameters": {}
 							}
 						],
 						"outputs": [
@@ -379,12 +377,6 @@
 				"linkedServiceName": {
 					"referenceName": "HTTP_Rebrickable",
 					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"FileName": {
-						"type": "string",
-						"defaultValue": "FileName"
-					}
 				},
 				"annotations": [],
 				"type": "DelimitedText",
