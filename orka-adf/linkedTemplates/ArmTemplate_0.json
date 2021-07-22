@@ -183,7 +183,7 @@
 					"location": {
 						"type": "HttpServerLocation",
 						"relativeUrl": {
-							"value": "@{dataset().FileName}.csv.gz",
+							"value": "@dataset().FileName",
 							"type": "Expression"
 						}
 					},
@@ -387,10 +387,7 @@
 								"referenceName": "HTTP_Lego",
 								"type": "DatasetReference",
 								"parameters": {
-									"FileName": {
-										"value": "@pipeline().parameters.FileName",
-										"type": "Expression"
-									}
+									"FileName": "colors.csv.gz"
 								}
 							}
 						],
