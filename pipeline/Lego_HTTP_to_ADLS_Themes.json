@@ -60,10 +60,7 @@
 								"referenceName": "ADLS_orka",
 								"type": "LinkedServiceReference"
 							},
-							"path": {
-								"value": "lego/errors/@pipeline().parameters.FileName.csv",
-								"type": "Expression"
-							}
+							"path": "lego/errors"
 						}
 					},
 					"dataIntegrationUnits": 2,
