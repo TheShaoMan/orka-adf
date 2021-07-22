@@ -17,11 +17,11 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "@{pipeline().parameters.FileName}.csv"
+						"value": "colors.csv.gz"
 					},
 					{
 						"name": "Destination",
-						"value": "lego//@{pipeline().parameters.FileName}.csv"
+						"value": "lego//colors.csv"
 					}
 				],
 				"typeProperties": {
