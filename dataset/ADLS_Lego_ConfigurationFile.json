@@ -1,0 +1,40 @@
+{
+	"name": "ADLS_Lego_ConfigurationFile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_orka",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "LegoConfigurationFile.csv",
+				"fileSystem": "lego"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "SourceSystem",
+				"type": "String"
+			},
+			{
+				"name": "SourceFileName",
+				"type": "String"
+			},
+			{
+				"name": "SourceFileExtension",
+				"type": "String"
+			},
+			{
+				"name": "IsActive",
+				"type": "String"
+			}
+		]
+	}
+}
