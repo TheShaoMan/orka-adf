@@ -96,10 +96,7 @@
 						"referenceName": "HTTP_Lego",
 						"type": "DatasetReference",
 						"parameters": {
-							"FileName": {
-								"value": "@pipeline().parameters.FileName",
-								"type": "Expression"
-							}
+							"FileName": "colors.csv.gz"
 						}
 					}
 				],
