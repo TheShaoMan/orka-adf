@@ -116,7 +116,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@dataset().FileName",
+							"value": "@{dataset().FileName}.csv",
 							"type": "Expression"
 						},
 						"fileSystem": "lego"
@@ -183,7 +183,7 @@
 					"location": {
 						"type": "HttpServerLocation",
 						"relativeUrl": {
-							"value": "@dataset().FileName",
+							"value": "@{dataset().FileName}.csv.gz",
 							"type": "Expression"
 						}
 					},
