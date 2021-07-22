@@ -97,12 +97,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"LoadAllFiles": {
-				"type": "bool",
-				"defaultValue": false
-			}
-		},
 		"annotations": []
 	}
 }
