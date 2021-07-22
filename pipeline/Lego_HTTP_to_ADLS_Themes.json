@@ -111,12 +111,6 @@
 				]
 			}
 		],
-		"parameters": {
-			"FileName": {
-				"type": "String",
-				"defaultValue": "FileName"
-			}
-		},
 		"annotations": [],
 		"lastPublishTime": "2021-07-20T01:25:34Z"
 	},
