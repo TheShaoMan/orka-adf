@@ -484,13 +484,40 @@
 							},
 							"firstRowOnly": false
 						}
+					},
+					{
+						"name": "Execute Pipeline1",
+						"type": "ExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "Lookup Configuration File",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "Lego_HTTP_to_ADLS",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {
+								"FileName": {
+									"value": "@activity('Lookup Configuration File').output.firstRow.SourceFileName",
+									"type": "Expression"
+								}
+							}
+						}
 					}
 				],
 				"annotations": []
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ADLS_Lego_ConfigurationFile')]",
-				"[concat(variables('factoryId'), '/datasets/ASQL_Lego_ConfigurationTable')]"
+				"[concat(variables('factoryId'), '/datasets/ASQL_Lego_ConfigurationTable')]",
+				"[concat(variables('factoryId'), '/pipelines/Lego_HTTP_to_ADLS')]"
 			]
 		},
 		{
