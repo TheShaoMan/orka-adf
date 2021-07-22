@@ -104,12 +104,21 @@
 					"referenceName": "ADLS_orka",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"FileName": {
+						"type": "String",
+						"defaultValue": "FileName"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "colors.csv",
+						"fileName": {
+							"value": "@dataset().FileName",
+							"type": "Expression"
+						},
 						"fileSystem": "lego"
 					},
 					"columnDelimiter": ",",
@@ -242,7 +251,12 @@
 							{
 								"referenceName": "ADLS_Lego",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"FileName": {
+										"value": "@{pipeline().parameters.FileName}.csv",
+										"type": "Expression"
+									}
+								}
 							}
 						],
 						"outputs": [
