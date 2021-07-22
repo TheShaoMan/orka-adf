@@ -85,7 +85,7 @@
 		"parameters": {
 			"LoadAllFiles": {
 				"type": "bool",
-				"defaultValue": "False"
+				"defaultValue": false
 			}
 		},
 		"variables": {
