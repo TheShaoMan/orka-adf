@@ -49,33 +49,13 @@
 							}
 						},
 						{
-							"name": "Append variable1",
+							"name": "Append Part Relationships",
 							"type": "AppendVariable",
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "Files",
 								"value": "part_relationships"
-							}
-						},
-						{
-							"name": "Set List of Files",
-							"type": "SetVariable",
-							"dependsOn": [
-								{
-									"activity": "Append variable1",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "ListOfFiles",
-								"value": {
-									"value": "Load @{length(variables('Files'))} files: @{join(variables('Files'), ',')}",
-									"type": "Expression"
-								}
 							}
 						}
 					]
