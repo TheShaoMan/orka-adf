@@ -1,5 +1,5 @@
 {
-	"name": "Lego_ADLS_to_ASQL_Themes",
+	"name": "Lego_ADLS_to_ASQL",
 	"properties": {
 		"description": "Extract Themes data from Azure Data Lake Storage, add a column, and load the data into Azure SQL Database",
 		"activities": [
