@@ -16,10 +16,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": {
-					"value": "@dataset().FileName",
-					"type": "Expression"
-				}
+				"relativeUrl": "colors.csv.gz"
 			},
 			"columnDelimiter": ",",
 			"compressionCodec": "gzip",
