@@ -94,10 +94,7 @@
 				"inputs": [
 					{
 						"referenceName": "HTTP_Lego",
-						"type": "DatasetReference",
-						"parameters": {
-							"FileName": "colors.csv.gz"
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
