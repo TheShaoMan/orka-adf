@@ -1,0 +1,53 @@
+{
+	"name": "LoadMainorAllFiles",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set Files",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Files",
+					"value": [
+						"colors",
+						"inventories",
+						"inventory_parts",
+						"part_categories",
+						"parts",
+						"sets",
+						"themes"
+					]
+				}
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Set Files",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": []
+			}
+		],
+		"parameters": {
+			"LoadAllFiles": {
+				"type": "bool",
+				"defaultValue": "False"
+			}
+		},
+		"variables": {
+			"Files": {
+				"type": "Array"
+			},
+			"ListOfFiles": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
