@@ -296,8 +296,8 @@
 						}
 					},
 					{
-						"name": "Set List of Files",
-						"type": "SetVariable",
+						"name": "ForEach File",
+						"type": "ForEach",
 						"dependsOn": [
 							{
 								"activity": "If Load All Files",
@@ -308,11 +308,31 @@
 						],
 						"userProperties": [],
 						"typeProperties": {
-							"variableName": "ListOfFiles",
-							"value": {
-								"value": "Load @{length(variables('Files'))} files: @{join(variables('Files'), ', ')}",
+							"items": {
+								"value": "@variables('Files')",
 								"type": "Expression"
-							}
+							},
+							"activities": [
+								{
+									"name": "Lego_HTTP_to_ADLS",
+									"type": "ExecutePipeline",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"pipeline": {
+											"referenceName": "Lego_HTTP_to_ADLS",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true,
+										"parameters": {
+											"FileName": {
+												"value": "@item()",
+												"type": "Expression"
+											}
+										}
+									}
+								}
+							]
 						}
 					}
 				],
@@ -325,14 +345,13 @@
 				"variables": {
 					"Files": {
 						"type": "Array"
-					},
-					"ListOfFiles": {
-						"type": "String"
 					}
 				},
 				"annotations": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/Lego_HTTP_to_ADLS')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Orchestration_Lego')]",
