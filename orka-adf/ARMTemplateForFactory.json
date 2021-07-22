@@ -33,7 +33,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/Lego_ADLS_to_ASQL_Themes')]",
+			"name": "[concat(parameters('factoryName'), '/Lego_ADLS_to_ASQL')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -121,7 +121,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Lego_HTTP_to_ADLS_Themes')]",
+			"name": "[concat(parameters('factoryName'), '/Lego_HTTP_to_ADLS')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -267,11 +267,16 @@
 						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
-								"referenceName": "Lego_HTTP_to_ADLS_Themes",
+								"referenceName": "Lego_HTTP_to_ADLS",
 								"type": "PipelineReference"
 							},
 							"waitOnCompletion": true,
-							"parameters": {}
+							"parameters": {
+								"FileName": {
+									"value": "@pipeline().parameters.FileName",
+									"type": "Expression"
+								}
+							}
 						}
 					},
 					{
@@ -288,20 +293,31 @@
 						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
-								"referenceName": "Lego_ADLS_to_ASQL_Themes",
+								"referenceName": "Lego_ADLS_to_ASQL",
 								"type": "PipelineReference"
 							},
 							"waitOnCompletion": true,
-							"parameters": {}
+							"parameters": {
+								"FileName": {
+									"value": "@pipeline().parameters.FileName",
+									"type": "Expression"
+								}
+							}
 						}
 					}
 				],
+				"parameters": {
+					"FileName": {
+						"type": "String",
+						"defaultValue": "FileName"
+					}
+				},
 				"annotations": [],
 				"lastPublishTime": "2021-07-20T00:19:10Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/Lego_HTTP_to_ADLS_Themes')]",
-				"[concat(variables('factoryId'), '/pipelines/Lego_ADLS_to_ASQL_Themes')]"
+				"[concat(variables('factoryId'), '/pipelines/Lego_HTTP_to_ADLS')]",
+				"[concat(variables('factoryId'), '/pipelines/Lego_ADLS_to_ASQL')]"
 			]
 		},
 		{

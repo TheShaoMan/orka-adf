@@ -6,199 +6,12 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "orka-adf"
-		},
-		"ADLS_orka_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'ADLS_orka'"
-		},
-		"ASQL_orka_Entertainment_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ASQL_orka_Entertainment'"
-		},
-		"ADLS_orka_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://orkadatalake.dfs.core.windows.net"
-		},
-		"HTTP_Rebrickable_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://cdn.rebrickable.com/media/downloads/"
-		},
-		"SensorTower_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://api.sensortower.com/v1/"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/ADLS_orka')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Linked service to the orkadatalake Azure Data Lake Storage Account",
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('ADLS_orka_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('ADLS_orka_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ASQL_orka_Entertainment')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Connection to the Entertainment database on the server orka-asql.database.windows.net",
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('ASQL_orka_Entertainment_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/HTTP_Rebrickable')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Linked service to the Lego downloads on Rebrickable: https://rebrickable.com/downloads/",
-				"annotations": [],
-				"type": "HttpServer",
-				"typeProperties": {
-					"url": "[parameters('HTTP_Rebrickable_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SensorTower')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "HttpServer",
-				"typeProperties": {
-					"url": "[parameters('SensorTower_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ADLS_Lego')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ADLS_orka",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"FileName": {
-						"type": "String",
-						"defaultValue": "FileName"
-					}
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@{dataset().FileName}.csv",
-							"type": "Expression"
-						},
-						"fileSystem": "lego"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ADLS_orka')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ASQL_Lego')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ASQL_orka_Entertainment",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"FileName": {
-						"type": "String",
-						"defaultValue": "FileName"
-					}
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "lego",
-					"table": {
-						"value": "@dataset().FileName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ASQL_orka_Entertainment')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/HTTP_Lego')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "HTTP_Rebrickable",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"FileName": {
-						"type": "string",
-						"defaultValue": "FileName"
-					}
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "HttpServerLocation",
-						"relativeUrl": {
-							"value": "@{dataset().FileName}.csv.gz",
-							"type": "Expression"
-						}
-					},
-					"columnDelimiter": ",",
-					"compressionCodec": "gzip",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/HTTP_Rebrickable')]"
-			]
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Lego_ADLS_to_ASQL')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -282,10 +95,7 @@
 				"annotations": [],
 				"lastPublishTime": "2021-07-19T07:23:15Z"
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ADLS_Lego')]",
-				"[concat(variables('factoryId'), '/datasets/ASQL_Lego')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Lego_HTTP_to_ADLS')]",
@@ -414,11 +224,7 @@
 				"annotations": [],
 				"lastPublishTime": "2021-07-20T01:25:34Z"
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/HTTP_Lego')]",
-				"[concat(variables('factoryId'), '/datasets/ADLS_Lego')]",
-				"[concat(variables('factoryId'), '/linkedServices/ADLS_orka')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Orchestration_Lego')]",
