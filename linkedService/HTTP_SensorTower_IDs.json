@@ -1,12 +1,6 @@
 {
 	"name": "HTTP_SensorTower_IDs",
 	"properties": {
-		"parameters": {
-			"auth_token": {
-				"type": "string",
-				"defaultValue": "LyrjK-Gg2cBq8ZcrSwWv"
-			}
-		},
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
