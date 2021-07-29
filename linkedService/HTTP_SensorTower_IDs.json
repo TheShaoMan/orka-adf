@@ -1,0 +1,18 @@
+{
+	"name": "HTTP_SensorTower_IDs",
+	"properties": {
+		"parameters": {
+			"auth_token": {
+				"type": "string",
+				"defaultValue": "LyrjK-Gg2cBq8ZcrSwWv"
+			}
+		},
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://sensortower.com/api/v1/",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
