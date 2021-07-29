@@ -3,10 +3,7 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "HTTP_SensorTower_IDs",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"auth_token": "LyrjK-Gg2cBq8ZcrSwWv"
-			}
+			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Json",
