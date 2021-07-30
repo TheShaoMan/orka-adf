@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "ADLS_Sensor_Tower_Categories",
+						"referenceName": "ASQL_Sensor_Tower_Categories",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -15,10 +15,10 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "Flatten1"
+					"name": "Unpivot1"
 				}
 			],
-			"script": "source(allowSchemaDrift: false,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tdocumentForm: 'documentPerLine') ~> source1\nsource1 foldDown(unroll(),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> Flatten1"
+			"script": "source(allowSchemaDrift: false,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source1\nsource1 unpivot(output(\n\t\tCategory_ID as string,\n\t\tCategory_Name as string\n\t),\n\tlateral: false,\n\tignoreNullPivots: false) ~> Unpivot1"
 		}
 	}
 }
