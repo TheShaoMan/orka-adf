@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "orka-adf"
 		},
+		"ABS_orka_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ABS_orka'"
+		},
 		"ADLS_orka_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ADLS_orka'"
@@ -22,6 +26,10 @@
 		"HTTP_Rebrickable_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://cdn.rebrickable.com/media/downloads/"
+		},
+		"HTTP_SensorTower_IDs_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sensortower.com/api/v1/"
 		},
 		"SensorTower_properties_typeProperties_url": {
 			"type": "string",
@@ -54,6 +62,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"ABS_orka_connectionString": {
+						"value": "[parameters('ABS_orka_connectionString')]"
+					},
 					"ADLS_orka_accountKey": {
 						"value": "[parameters('ADLS_orka_accountKey')]"
 					},
@@ -66,12 +77,35 @@
 					"HTTP_Rebrickable_properties_typeProperties_url": {
 						"value": "[parameters('HTTP_Rebrickable_properties_typeProperties_url')]"
 					},
+					"HTTP_SensorTower_IDs_properties_typeProperties_url": {
+						"value": "[parameters('HTTP_SensorTower_IDs_properties_typeProperties_url')]"
+					},
 					"SensorTower_properties_typeProperties_url": {
 						"value": "[parameters('SensorTower_properties_typeProperties_url')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "orka-adf_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'orka-adf_ArmTemplate_0')]"
+			]
 		}
 	]
 }

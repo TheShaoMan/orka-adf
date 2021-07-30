@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "orka-adf"
 		},
+		"ABS_orka_connectionString": {
+			"value": ""
+		},
 		"ADLS_orka_accountKey": {
 			"value": ""
 		},
@@ -16,6 +19,9 @@
 		},
 		"HTTP_Rebrickable_properties_typeProperties_url": {
 			"value": "https://cdn.rebrickable.com/media/downloads/"
+		},
+		"HTTP_SensorTower_IDs_properties_typeProperties_url": {
+			"value": "https://sensortower.com/api/v1/"
 		},
 		"SensorTower_properties_typeProperties_url": {
 			"value": "https://api.sensortower.com/v1/"
