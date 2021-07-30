@@ -1,0 +1,19 @@
+{
+	"name": "HTTP_Sensor_Tower_Categories",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_orka",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "category_ids.json",
+				"fileSystem": "sensortower"
+			}
+		},
+		"schema": {}
+	}
+}
