@@ -1,0 +1,650 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "orka-adf"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/ASQL_Sensor_Tower_Categories')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ASQL_orka_Entertainment",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "0",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6000",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6001",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6002",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6003",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6004",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6005",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6006",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6007",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6008",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6009",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6010",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6011",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6012",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6013",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6014",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6015",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6016",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6017",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6018",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6020",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6021",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6022",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6023",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6024",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6026",
+						"type": "nvarchar"
+					},
+					{
+						"name": "6027",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7001",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7002",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7003",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7004",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7005",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7006",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7007",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7008",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7009",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7011",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7012",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7013",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7014",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7015",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7016",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7017",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7018",
+						"type": "nvarchar"
+					},
+					{
+						"name": "7019",
+						"type": "nvarchar"
+					},
+					{
+						"name": "9007",
+						"type": "nvarchar"
+					},
+					{
+						"name": "10000",
+						"type": "nvarchar"
+					},
+					{
+						"name": "10001",
+						"type": "nvarchar"
+					},
+					{
+						"name": "10002",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13001",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13002",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13003",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13004",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13005",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13006",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13007",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13008",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13009",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13010",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13011",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13012",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13013",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13014",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13015",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13017",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13018",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13019",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13020",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13021",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13023",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13024",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13025",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13026",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13027",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13028",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13029",
+						"type": "nvarchar"
+					},
+					{
+						"name": "13030",
+						"type": "nvarchar"
+					},
+					{
+						"name": "all",
+						"type": "nvarchar"
+					},
+					{
+						"name": "app_wallpaper",
+						"type": "nvarchar"
+					},
+					{
+						"name": "app_widgets",
+						"type": "nvarchar"
+					},
+					{
+						"name": "application",
+						"type": "nvarchar"
+					},
+					{
+						"name": "art_and_design",
+						"type": "nvarchar"
+					},
+					{
+						"name": "auto_and_vehicles",
+						"type": "nvarchar"
+					},
+					{
+						"name": "beauty",
+						"type": "nvarchar"
+					},
+					{
+						"name": "books_and_reference",
+						"type": "nvarchar"
+					},
+					{
+						"name": "business",
+						"type": "nvarchar"
+					},
+					{
+						"name": "comics",
+						"type": "nvarchar"
+					},
+					{
+						"name": "communication",
+						"type": "nvarchar"
+					},
+					{
+						"name": "dating",
+						"type": "nvarchar"
+					},
+					{
+						"name": "education",
+						"type": "nvarchar"
+					},
+					{
+						"name": "entertainment",
+						"type": "nvarchar"
+					},
+					{
+						"name": "events",
+						"type": "nvarchar"
+					},
+					{
+						"name": "family",
+						"type": "nvarchar"
+					},
+					{
+						"name": "family_action",
+						"type": "nvarchar"
+					},
+					{
+						"name": "family_braingames",
+						"type": "nvarchar"
+					},
+					{
+						"name": "family_create",
+						"type": "nvarchar"
+					},
+					{
+						"name": "family_education",
+						"type": "nvarchar"
+					},
+					{
+						"name": "family_musicvideo",
+						"type": "nvarchar"
+					},
+					{
+						"name": "family_pretend",
+						"type": "nvarchar"
+					},
+					{
+						"name": "finance",
+						"type": "nvarchar"
+					},
+					{
+						"name": "food_and_drink",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_action",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_adventure",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_arcade",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_board",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_card",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_casino",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_casual",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_educational",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_family",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_music",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_puzzle",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_racing",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_role_playing",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_simulation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_sports",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_strategy",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_trivia",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_wallpaper",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_widgets",
+						"type": "nvarchar"
+					},
+					{
+						"name": "game_word",
+						"type": "nvarchar"
+					},
+					{
+						"name": "health_and_fitness",
+						"type": "nvarchar"
+					},
+					{
+						"name": "house_and_home",
+						"type": "nvarchar"
+					},
+					{
+						"name": "libraries_and_demo",
+						"type": "nvarchar"
+					},
+					{
+						"name": "lifestyle",
+						"type": "nvarchar"
+					},
+					{
+						"name": "maps_and_navigation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "media_and_video",
+						"type": "nvarchar"
+					},
+					{
+						"name": "medical",
+						"type": "nvarchar"
+					},
+					{
+						"name": "music_and_audio",
+						"type": "nvarchar"
+					},
+					{
+						"name": "news_and_magazines",
+						"type": "nvarchar"
+					},
+					{
+						"name": "parenting",
+						"type": "nvarchar"
+					},
+					{
+						"name": "personalization",
+						"type": "nvarchar"
+					},
+					{
+						"name": "photography",
+						"type": "nvarchar"
+					},
+					{
+						"name": "productivity",
+						"type": "nvarchar"
+					},
+					{
+						"name": "shopping",
+						"type": "nvarchar"
+					},
+					{
+						"name": "social",
+						"type": "nvarchar"
+					},
+					{
+						"name": "sports",
+						"type": "nvarchar"
+					},
+					{
+						"name": "tools",
+						"type": "nvarchar"
+					},
+					{
+						"name": "transportation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "travel_and_local",
+						"type": "nvarchar"
+					},
+					{
+						"name": "video_players",
+						"type": "nvarchar"
+					},
+					{
+						"name": "weather",
+						"type": "nvarchar"
+					},
+					{
+						"name": "id",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "sensortower",
+					"table": "categories"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow1')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "ASQL_Sensor_Tower_Categories",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "ASQL_Sensor_Tower_Categories_Unpivot",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [
+						{
+							"name": "Unpivot1"
+						}
+					],
+					"script": "source(output(\n\t\t{0} as string,\n\t\t{6000} as string,\n\t\t{6001} as string,\n\t\t{6002} as string,\n\t\t{6003} as string,\n\t\t{6004} as string,\n\t\t{6005} as string,\n\t\t{6006} as string,\n\t\t{6007} as string,\n\t\t{6008} as string,\n\t\t{6009} as string,\n\t\t{6010} as string,\n\t\t{6011} as string,\n\t\t{6012} as string,\n\t\t{6013} as string,\n\t\t{6014} as string,\n\t\t{6015} as string,\n\t\t{6016} as string,\n\t\t{6017} as string,\n\t\t{6018} as string,\n\t\t{6020} as string,\n\t\t{6021} as string,\n\t\t{6022} as string,\n\t\t{6023} as string,\n\t\t{6024} as string,\n\t\t{6026} as string,\n\t\t{6027} as string,\n\t\t{7001} as string,\n\t\t{7002} as string,\n\t\t{7003} as string,\n\t\t{7004} as string,\n\t\t{7005} as string,\n\t\t{7006} as string,\n\t\t{7007} as string,\n\t\t{7008} as string,\n\t\t{7009} as string,\n\t\t{7011} as string,\n\t\t{7012} as string,\n\t\t{7013} as string,\n\t\t{7014} as string,\n\t\t{7015} as string,\n\t\t{7016} as string,\n\t\t{7017} as string,\n\t\t{7018} as string,\n\t\t{7019} as string,\n\t\t{9007} as string,\n\t\t{10000} as string,\n\t\t{10001} as string,\n\t\t{10002} as string,\n\t\t{13001} as string,\n\t\t{13002} as string,\n\t\t{13003} as string,\n\t\t{13004} as string,\n\t\t{13005} as string,\n\t\t{13006} as string,\n\t\t{13007} as string,\n\t\t{13008} as string,\n\t\t{13009} as string,\n\t\t{13010} as string,\n\t\t{13011} as string,\n\t\t{13012} as string,\n\t\t{13013} as string,\n\t\t{13014} as string,\n\t\t{13015} as string,\n\t\t{13017} as string,\n\t\t{13018} as string,\n\t\t{13019} as string,\n\t\t{13020} as string,\n\t\t{13021} as string,\n\t\t{13023} as string,\n\t\t{13024} as string,\n\t\t{13025} as string,\n\t\t{13026} as string,\n\t\t{13027} as string,\n\t\t{13028} as string,\n\t\t{13029} as string,\n\t\t{13030} as string,\n\t\tall as string,\n\t\tapp_wallpaper as string,\n\t\tapp_widgets as string,\n\t\tapplication as string,\n\t\tart_and_design as string,\n\t\tauto_and_vehicles as string,\n\t\tbeauty as string,\n\t\tbooks_and_reference as string,\n\t\tbusiness as string,\n\t\tcomics as string,\n\t\tcommunication as string,\n\t\tdating as string,\n\t\teducation as string,\n\t\tentertainment as string,\n\t\tevents as string,\n\t\tfamily as string,\n\t\tfamily_action as string,\n\t\tfamily_braingames as string,\n\t\tfamily_create as string,\n\t\tfamily_education as string,\n\t\tfamily_musicvideo as string,\n\t\tfamily_pretend as string,\n\t\tfinance as string,\n\t\tfood_and_drink as string,\n\t\tgame as string,\n\t\tgame_action as string,\n\t\tgame_adventure as string,\n\t\tgame_arcade as string,\n\t\tgame_board as string,\n\t\tgame_card as string,\n\t\tgame_casino as string,\n\t\tgame_casual as string,\n\t\tgame_educational as string,\n\t\tgame_family as string,\n\t\tgame_music as string,\n\t\tgame_puzzle as string,\n\t\tgame_racing as string,\n\t\tgame_role_playing as string,\n\t\tgame_simulation as string,\n\t\tgame_sports as string,\n\t\tgame_strategy as string,\n\t\tgame_trivia as string,\n\t\tgame_wallpaper as string,\n\t\tgame_widgets as string,\n\t\tgame_word as string,\n\t\thealth_and_fitness as string,\n\t\thouse_and_home as string,\n\t\tlibraries_and_demo as string,\n\t\tlifestyle as string,\n\t\tmaps_and_navigation as string,\n\t\tmedia_and_video as string,\n\t\tmedical as string,\n\t\tmusic_and_audio as string,\n\t\tnews_and_magazines as string,\n\t\tparenting as string,\n\t\tpersonalization as string,\n\t\tphotography as string,\n\t\tproductivity as string,\n\t\tshopping as string,\n\t\tsocial as string,\n\t\tsports as string,\n\t\ttools as string,\n\t\ttransportation as string,\n\t\ttravel_and_local as string,\n\t\tvideo_players as string,\n\t\tweather as string,\n\t\tid as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'NONE',\n\tformat: 'table') ~> source1\nsource1 unpivot(output(\n\t\tCategory_ID as string,\n\t\tCategory_Name as string\n\t),\n\tungroupBy(id),\n\tlateral: false,\n\tignoreNullPivots: false) ~> Unpivot1\nUnpivot1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> sink1"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/ASQL_Sensor_Tower_Categories')]"
+			]
+		}
+	]
+}
