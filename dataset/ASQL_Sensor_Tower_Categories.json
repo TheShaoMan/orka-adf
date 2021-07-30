@@ -7,7 +7,585 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "0",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6000",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6001",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6002",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6003",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6004",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6005",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6006",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6007",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6008",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6009",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6010",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6011",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6012",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6013",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6014",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6015",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6016",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6017",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6018",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6020",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6021",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6022",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6023",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6024",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6026",
+				"type": "nvarchar"
+			},
+			{
+				"name": "6027",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7001",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7002",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7003",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7004",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7005",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7006",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7007",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7008",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7009",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7011",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7012",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7013",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7014",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7015",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7016",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7017",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7018",
+				"type": "nvarchar"
+			},
+			{
+				"name": "7019",
+				"type": "nvarchar"
+			},
+			{
+				"name": "9007",
+				"type": "nvarchar"
+			},
+			{
+				"name": "10000",
+				"type": "nvarchar"
+			},
+			{
+				"name": "10001",
+				"type": "nvarchar"
+			},
+			{
+				"name": "10002",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13001",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13002",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13003",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13004",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13005",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13006",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13007",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13008",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13009",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13010",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13011",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13012",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13013",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13014",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13015",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13017",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13018",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13019",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13020",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13021",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13023",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13024",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13025",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13026",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13027",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13028",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13029",
+				"type": "nvarchar"
+			},
+			{
+				"name": "13030",
+				"type": "nvarchar"
+			},
+			{
+				"name": "all",
+				"type": "nvarchar"
+			},
+			{
+				"name": "app_wallpaper",
+				"type": "nvarchar"
+			},
+			{
+				"name": "app_widgets",
+				"type": "nvarchar"
+			},
+			{
+				"name": "application",
+				"type": "nvarchar"
+			},
+			{
+				"name": "art_and_design",
+				"type": "nvarchar"
+			},
+			{
+				"name": "auto_and_vehicles",
+				"type": "nvarchar"
+			},
+			{
+				"name": "beauty",
+				"type": "nvarchar"
+			},
+			{
+				"name": "books_and_reference",
+				"type": "nvarchar"
+			},
+			{
+				"name": "business",
+				"type": "nvarchar"
+			},
+			{
+				"name": "comics",
+				"type": "nvarchar"
+			},
+			{
+				"name": "communication",
+				"type": "nvarchar"
+			},
+			{
+				"name": "dating",
+				"type": "nvarchar"
+			},
+			{
+				"name": "education",
+				"type": "nvarchar"
+			},
+			{
+				"name": "entertainment",
+				"type": "nvarchar"
+			},
+			{
+				"name": "events",
+				"type": "nvarchar"
+			},
+			{
+				"name": "family",
+				"type": "nvarchar"
+			},
+			{
+				"name": "family_action",
+				"type": "nvarchar"
+			},
+			{
+				"name": "family_braingames",
+				"type": "nvarchar"
+			},
+			{
+				"name": "family_create",
+				"type": "nvarchar"
+			},
+			{
+				"name": "family_education",
+				"type": "nvarchar"
+			},
+			{
+				"name": "family_musicvideo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "family_pretend",
+				"type": "nvarchar"
+			},
+			{
+				"name": "finance",
+				"type": "nvarchar"
+			},
+			{
+				"name": "food_and_drink",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_action",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_adventure",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_arcade",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_board",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_card",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_casino",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_casual",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_educational",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_family",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_music",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_puzzle",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_racing",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_role_playing",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_simulation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_sports",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_strategy",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_trivia",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_wallpaper",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_widgets",
+				"type": "nvarchar"
+			},
+			{
+				"name": "game_word",
+				"type": "nvarchar"
+			},
+			{
+				"name": "health_and_fitness",
+				"type": "nvarchar"
+			},
+			{
+				"name": "house_and_home",
+				"type": "nvarchar"
+			},
+			{
+				"name": "libraries_and_demo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "lifestyle",
+				"type": "nvarchar"
+			},
+			{
+				"name": "maps_and_navigation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "media_and_video",
+				"type": "nvarchar"
+			},
+			{
+				"name": "medical",
+				"type": "nvarchar"
+			},
+			{
+				"name": "music_and_audio",
+				"type": "nvarchar"
+			},
+			{
+				"name": "news_and_magazines",
+				"type": "nvarchar"
+			},
+			{
+				"name": "parenting",
+				"type": "nvarchar"
+			},
+			{
+				"name": "personalization",
+				"type": "nvarchar"
+			},
+			{
+				"name": "photography",
+				"type": "nvarchar"
+			},
+			{
+				"name": "productivity",
+				"type": "nvarchar"
+			},
+			{
+				"name": "shopping",
+				"type": "nvarchar"
+			},
+			{
+				"name": "social",
+				"type": "nvarchar"
+			},
+			{
+				"name": "sports",
+				"type": "nvarchar"
+			},
+			{
+				"name": "tools",
+				"type": "nvarchar"
+			},
+			{
+				"name": "transportation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "travel_and_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "video_players",
+				"type": "nvarchar"
+			},
+			{
+				"name": "weather",
+				"type": "nvarchar"
+			},
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			}
+		],
 		"typeProperties": {
 			"schema": "sensortower",
 			"table": "categories"
