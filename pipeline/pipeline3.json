@@ -31,7 +31,1157 @@
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['0']"
+								},
+								"sink": {
+									"name": "0"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6000']"
+								},
+								"sink": {
+									"name": "6000"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6001']"
+								},
+								"sink": {
+									"name": "6001"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6002']"
+								},
+								"sink": {
+									"name": "6002"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6003']"
+								},
+								"sink": {
+									"name": "6003"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6004']"
+								},
+								"sink": {
+									"name": "6004"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6005']"
+								},
+								"sink": {
+									"name": "6005"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6006']"
+								},
+								"sink": {
+									"name": "6006"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6007']"
+								},
+								"sink": {
+									"name": "6007"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6008']"
+								},
+								"sink": {
+									"name": "6008"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6009']"
+								},
+								"sink": {
+									"name": "6009"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6010']"
+								},
+								"sink": {
+									"name": "6010"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6011']"
+								},
+								"sink": {
+									"name": "6011"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6012']"
+								},
+								"sink": {
+									"name": "6012"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6013']"
+								},
+								"sink": {
+									"name": "6013"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6014']"
+								},
+								"sink": {
+									"name": "6014"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6015']"
+								},
+								"sink": {
+									"name": "6015"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6016']"
+								},
+								"sink": {
+									"name": "6016"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6017']"
+								},
+								"sink": {
+									"name": "6017"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6018']"
+								},
+								"sink": {
+									"name": "6018"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6020']"
+								},
+								"sink": {
+									"name": "6020"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6021']"
+								},
+								"sink": {
+									"name": "6021"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6022']"
+								},
+								"sink": {
+									"name": "6022"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6023']"
+								},
+								"sink": {
+									"name": "6023"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6024']"
+								},
+								"sink": {
+									"name": "6024"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6026']"
+								},
+								"sink": {
+									"name": "6026"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['6027']"
+								},
+								"sink": {
+									"name": "6027"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7001']"
+								},
+								"sink": {
+									"name": "7001"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7002']"
+								},
+								"sink": {
+									"name": "7002"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7003']"
+								},
+								"sink": {
+									"name": "7003"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7004']"
+								},
+								"sink": {
+									"name": "7004"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7005']"
+								},
+								"sink": {
+									"name": "7005"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7006']"
+								},
+								"sink": {
+									"name": "7006"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7007']"
+								},
+								"sink": {
+									"name": "7007"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7008']"
+								},
+								"sink": {
+									"name": "7008"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7009']"
+								},
+								"sink": {
+									"name": "7009"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7011']"
+								},
+								"sink": {
+									"name": "7011"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7012']"
+								},
+								"sink": {
+									"name": "7012"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7013']"
+								},
+								"sink": {
+									"name": "7013"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7014']"
+								},
+								"sink": {
+									"name": "7014"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7015']"
+								},
+								"sink": {
+									"name": "7015"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7016']"
+								},
+								"sink": {
+									"name": "7016"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7017']"
+								},
+								"sink": {
+									"name": "7017"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7018']"
+								},
+								"sink": {
+									"name": "7018"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['7019']"
+								},
+								"sink": {
+									"name": "7019"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['9007']"
+								},
+								"sink": {
+									"name": "9007"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['10000']"
+								},
+								"sink": {
+									"name": "10000"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['10001']"
+								},
+								"sink": {
+									"name": "10001"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['10002']"
+								},
+								"sink": {
+									"name": "10002"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13001']"
+								},
+								"sink": {
+									"name": "13001"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13002']"
+								},
+								"sink": {
+									"name": "13002"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13003']"
+								},
+								"sink": {
+									"name": "13003"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13004']"
+								},
+								"sink": {
+									"name": "13004"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13005']"
+								},
+								"sink": {
+									"name": "13005"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13006']"
+								},
+								"sink": {
+									"name": "13006"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13007']"
+								},
+								"sink": {
+									"name": "13007"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13008']"
+								},
+								"sink": {
+									"name": "13008"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13009']"
+								},
+								"sink": {
+									"name": "13009"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13010']"
+								},
+								"sink": {
+									"name": "13010"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13011']"
+								},
+								"sink": {
+									"name": "13011"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13012']"
+								},
+								"sink": {
+									"name": "13012"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13013']"
+								},
+								"sink": {
+									"name": "13013"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13014']"
+								},
+								"sink": {
+									"name": "13014"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13015']"
+								},
+								"sink": {
+									"name": "13015"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13017']"
+								},
+								"sink": {
+									"name": "13017"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13018']"
+								},
+								"sink": {
+									"name": "13018"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13019']"
+								},
+								"sink": {
+									"name": "13019"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13020']"
+								},
+								"sink": {
+									"name": "13020"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13021']"
+								},
+								"sink": {
+									"name": "13021"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13023']"
+								},
+								"sink": {
+									"name": "13023"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13024']"
+								},
+								"sink": {
+									"name": "13024"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13025']"
+								},
+								"sink": {
+									"name": "13025"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13026']"
+								},
+								"sink": {
+									"name": "13026"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13027']"
+								},
+								"sink": {
+									"name": "13027"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13028']"
+								},
+								"sink": {
+									"name": "13028"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13029']"
+								},
+								"sink": {
+									"name": "13029"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['ios']['13030']"
+								},
+								"sink": {
+									"name": "13030"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['all']"
+								},
+								"sink": {
+									"name": "all"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['app_wallpaper']"
+								},
+								"sink": {
+									"name": "app_wallpaper"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['app_widgets']"
+								},
+								"sink": {
+									"name": "app_widgets"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['application']"
+								},
+								"sink": {
+									"name": "application"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['art_and_design']"
+								},
+								"sink": {
+									"name": "art_and_design"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['auto_and_vehicles']"
+								},
+								"sink": {
+									"name": "auto_and_vehicles"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['beauty']"
+								},
+								"sink": {
+									"name": "beauty"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['books_and_reference']"
+								},
+								"sink": {
+									"name": "books_and_reference"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['business']"
+								},
+								"sink": {
+									"name": "business"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['comics']"
+								},
+								"sink": {
+									"name": "comics"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['communication']"
+								},
+								"sink": {
+									"name": "communication"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['dating']"
+								},
+								"sink": {
+									"name": "dating"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['education']"
+								},
+								"sink": {
+									"name": "education"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['entertainment']"
+								},
+								"sink": {
+									"name": "entertainment"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['events']"
+								},
+								"sink": {
+									"name": "events"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['family']"
+								},
+								"sink": {
+									"name": "family"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['family_action']"
+								},
+								"sink": {
+									"name": "family_action"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['family_braingames']"
+								},
+								"sink": {
+									"name": "family_braingames"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['family_create']"
+								},
+								"sink": {
+									"name": "family_create"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['family_education']"
+								},
+								"sink": {
+									"name": "family_education"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['family_musicvideo']"
+								},
+								"sink": {
+									"name": "family_musicvideo"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['family_pretend']"
+								},
+								"sink": {
+									"name": "family_pretend"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['finance']"
+								},
+								"sink": {
+									"name": "finance"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['food_and_drink']"
+								},
+								"sink": {
+									"name": "food_and_drink"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game']"
+								},
+								"sink": {
+									"name": "game"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_action']"
+								},
+								"sink": {
+									"name": "game_action"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_adventure']"
+								},
+								"sink": {
+									"name": "game_adventure"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_arcade']"
+								},
+								"sink": {
+									"name": "game_arcade"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_board']"
+								},
+								"sink": {
+									"name": "game_board"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_card']"
+								},
+								"sink": {
+									"name": "game_card"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_casino']"
+								},
+								"sink": {
+									"name": "game_casino"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_casual']"
+								},
+								"sink": {
+									"name": "game_casual"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_educational']"
+								},
+								"sink": {
+									"name": "game_educational"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_family']"
+								},
+								"sink": {
+									"name": "game_family"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_music']"
+								},
+								"sink": {
+									"name": "game_music"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_puzzle']"
+								},
+								"sink": {
+									"name": "game_puzzle"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_racing']"
+								},
+								"sink": {
+									"name": "game_racing"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_role_playing']"
+								},
+								"sink": {
+									"name": "game_role_playing"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_simulation']"
+								},
+								"sink": {
+									"name": "game_simulation"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_sports']"
+								},
+								"sink": {
+									"name": "game_sports"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_strategy']"
+								},
+								"sink": {
+									"name": "game_strategy"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_trivia']"
+								},
+								"sink": {
+									"name": "game_trivia"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_wallpaper']"
+								},
+								"sink": {
+									"name": "game_wallpaper"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_widgets']"
+								},
+								"sink": {
+									"name": "game_widgets"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['game_word']"
+								},
+								"sink": {
+									"name": "game_word"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['health_and_fitness']"
+								},
+								"sink": {
+									"name": "health_and_fitness"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['house_and_home']"
+								},
+								"sink": {
+									"name": "house_and_home"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['libraries_and_demo']"
+								},
+								"sink": {
+									"name": "libraries_and_demo"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['lifestyle']"
+								},
+								"sink": {
+									"name": "lifestyle"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['maps_and_navigation']"
+								},
+								"sink": {
+									"name": "maps_and_navigation"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['media_and_video']"
+								},
+								"sink": {
+									"name": "media_and_video"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['medical']"
+								},
+								"sink": {
+									"name": "medical"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['music_and_audio']"
+								},
+								"sink": {
+									"name": "music_and_audio"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['news_and_magazines']"
+								},
+								"sink": {
+									"name": "news_and_magazines"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['parenting']"
+								},
+								"sink": {
+									"name": "parenting"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['personalization']"
+								},
+								"sink": {
+									"name": "personalization"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['photography']"
+								},
+								"sink": {
+									"name": "photography"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['productivity']"
+								},
+								"sink": {
+									"name": "productivity"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['shopping']"
+								},
+								"sink": {
+									"name": "shopping"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['social']"
+								},
+								"sink": {
+									"name": "social"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['sports']"
+								},
+								"sink": {
+									"name": "sports"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['tools']"
+								},
+								"sink": {
+									"name": "tools"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['transportation']"
+								},
+								"sink": {
+									"name": "transportation"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['travel_and_local']"
+								},
+								"sink": {
+									"name": "travel_and_local"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['video_players']"
+								},
+								"sink": {
+									"name": "video_players"
+								}
+							},
+							{
+								"source": {
+									"path": "$['category_ids']['android']['weather']"
+								},
+								"sink": {
+									"name": "weather"
+								}
+							}
+						],
+						"collectionReference": ""
+					}
 				},
 				"inputs": [
 					{
