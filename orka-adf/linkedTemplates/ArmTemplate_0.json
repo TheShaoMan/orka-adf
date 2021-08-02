@@ -316,588 +316,10 @@
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "0",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6000",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6001",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6002",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6003",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6004",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6005",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6006",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6007",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6008",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6009",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6010",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6011",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6012",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6013",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6014",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6015",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6016",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6017",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6018",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6020",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6021",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6022",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6023",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6024",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6026",
-						"type": "nvarchar"
-					},
-					{
-						"name": "6027",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7001",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7002",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7003",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7004",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7005",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7006",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7007",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7008",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7009",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7011",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7012",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7013",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7014",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7015",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7016",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7017",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7018",
-						"type": "nvarchar"
-					},
-					{
-						"name": "7019",
-						"type": "nvarchar"
-					},
-					{
-						"name": "9007",
-						"type": "nvarchar"
-					},
-					{
-						"name": "10000",
-						"type": "nvarchar"
-					},
-					{
-						"name": "10001",
-						"type": "nvarchar"
-					},
-					{
-						"name": "10002",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13001",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13002",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13003",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13004",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13005",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13006",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13007",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13008",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13009",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13010",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13011",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13012",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13013",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13014",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13015",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13017",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13018",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13019",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13020",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13021",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13023",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13024",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13025",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13026",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13027",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13028",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13029",
-						"type": "nvarchar"
-					},
-					{
-						"name": "13030",
-						"type": "nvarchar"
-					},
-					{
-						"name": "all",
-						"type": "nvarchar"
-					},
-					{
-						"name": "app_wallpaper",
-						"type": "nvarchar"
-					},
-					{
-						"name": "app_widgets",
-						"type": "nvarchar"
-					},
-					{
-						"name": "application",
-						"type": "nvarchar"
-					},
-					{
-						"name": "art_and_design",
-						"type": "nvarchar"
-					},
-					{
-						"name": "auto_and_vehicles",
-						"type": "nvarchar"
-					},
-					{
-						"name": "beauty",
-						"type": "nvarchar"
-					},
-					{
-						"name": "books_and_reference",
-						"type": "nvarchar"
-					},
-					{
-						"name": "business",
-						"type": "nvarchar"
-					},
-					{
-						"name": "comics",
-						"type": "nvarchar"
-					},
-					{
-						"name": "communication",
-						"type": "nvarchar"
-					},
-					{
-						"name": "dating",
-						"type": "nvarchar"
-					},
-					{
-						"name": "education",
-						"type": "nvarchar"
-					},
-					{
-						"name": "entertainment",
-						"type": "nvarchar"
-					},
-					{
-						"name": "events",
-						"type": "nvarchar"
-					},
-					{
-						"name": "family",
-						"type": "nvarchar"
-					},
-					{
-						"name": "family_action",
-						"type": "nvarchar"
-					},
-					{
-						"name": "family_braingames",
-						"type": "nvarchar"
-					},
-					{
-						"name": "family_create",
-						"type": "nvarchar"
-					},
-					{
-						"name": "family_education",
-						"type": "nvarchar"
-					},
-					{
-						"name": "family_musicvideo",
-						"type": "nvarchar"
-					},
-					{
-						"name": "family_pretend",
-						"type": "nvarchar"
-					},
-					{
-						"name": "finance",
-						"type": "nvarchar"
-					},
-					{
-						"name": "food_and_drink",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_action",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_adventure",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_arcade",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_board",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_card",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_casino",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_casual",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_educational",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_family",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_music",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_puzzle",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_racing",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_role_playing",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_simulation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_sports",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_strategy",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_trivia",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_wallpaper",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_widgets",
-						"type": "nvarchar"
-					},
-					{
-						"name": "game_word",
-						"type": "nvarchar"
-					},
-					{
-						"name": "health_and_fitness",
-						"type": "nvarchar"
-					},
-					{
-						"name": "house_and_home",
-						"type": "nvarchar"
-					},
-					{
-						"name": "libraries_and_demo",
-						"type": "nvarchar"
-					},
-					{
-						"name": "lifestyle",
-						"type": "nvarchar"
-					},
-					{
-						"name": "maps_and_navigation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "media_and_video",
-						"type": "nvarchar"
-					},
-					{
-						"name": "medical",
-						"type": "nvarchar"
-					},
-					{
-						"name": "music_and_audio",
-						"type": "nvarchar"
-					},
-					{
-						"name": "news_and_magazines",
-						"type": "nvarchar"
-					},
-					{
-						"name": "parenting",
-						"type": "nvarchar"
-					},
-					{
-						"name": "personalization",
-						"type": "nvarchar"
-					},
-					{
-						"name": "photography",
-						"type": "nvarchar"
-					},
-					{
-						"name": "productivity",
-						"type": "nvarchar"
-					},
-					{
-						"name": "shopping",
-						"type": "nvarchar"
-					},
-					{
-						"name": "social",
-						"type": "nvarchar"
-					},
-					{
-						"name": "sports",
-						"type": "nvarchar"
-					},
-					{
-						"name": "tools",
-						"type": "nvarchar"
-					},
-					{
-						"name": "transportation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "travel_and_local",
-						"type": "nvarchar"
-					},
-					{
-						"name": "video_players",
-						"type": "nvarchar"
-					},
-					{
-						"name": "weather",
-						"type": "nvarchar"
-					},
-					{
-						"name": "id",
-						"type": "int",
-						"precision": 10
-					}
-				],
+				"schema": [],
 				"typeProperties": {
-					"schema": "sensortower",
-					"table": "categories"
+					"schema": "dbo",
+					"table": "categories_raw"
 				}
 			},
 			"dependsOn": [
@@ -979,7 +401,455 @@
 						"relativeUrl": "category_ids.json?auth_token=LyrjK-Gg2cBq8ZcrSwWv"
 					}
 				},
-				"schema": {}
+				"schema": {
+					"type": "object",
+					"properties": {
+						"category_ids": {
+							"type": "object",
+							"properties": {
+								"ios": {
+									"type": "object",
+									"properties": {
+										"0": {
+											"type": "string"
+										},
+										"6000": {
+											"type": "string"
+										},
+										"6001": {
+											"type": "string"
+										},
+										"6002": {
+											"type": "string"
+										},
+										"6003": {
+											"type": "string"
+										},
+										"6004": {
+											"type": "string"
+										},
+										"6005": {
+											"type": "string"
+										},
+										"6006": {
+											"type": "string"
+										},
+										"6007": {
+											"type": "string"
+										},
+										"6008": {
+											"type": "string"
+										},
+										"6009": {
+											"type": "string"
+										},
+										"6010": {
+											"type": "string"
+										},
+										"6011": {
+											"type": "string"
+										},
+										"6012": {
+											"type": "string"
+										},
+										"6013": {
+											"type": "string"
+										},
+										"6014": {
+											"type": "string"
+										},
+										"6015": {
+											"type": "string"
+										},
+										"6016": {
+											"type": "string"
+										},
+										"6017": {
+											"type": "string"
+										},
+										"6018": {
+											"type": "string"
+										},
+										"6020": {
+											"type": "string"
+										},
+										"6021": {
+											"type": "string"
+										},
+										"6022": {
+											"type": "string"
+										},
+										"6023": {
+											"type": "string"
+										},
+										"6024": {
+											"type": "string"
+										},
+										"6026": {
+											"type": "string"
+										},
+										"6027": {
+											"type": "string"
+										},
+										"7001": {
+											"type": "string"
+										},
+										"7002": {
+											"type": "string"
+										},
+										"7003": {
+											"type": "string"
+										},
+										"7004": {
+											"type": "string"
+										},
+										"7005": {
+											"type": "string"
+										},
+										"7006": {
+											"type": "string"
+										},
+										"7007": {
+											"type": "string"
+										},
+										"7008": {
+											"type": "string"
+										},
+										"7009": {
+											"type": "string"
+										},
+										"7011": {
+											"type": "string"
+										},
+										"7012": {
+											"type": "string"
+										},
+										"7013": {
+											"type": "string"
+										},
+										"7014": {
+											"type": "string"
+										},
+										"7015": {
+											"type": "string"
+										},
+										"7016": {
+											"type": "string"
+										},
+										"7017": {
+											"type": "string"
+										},
+										"7018": {
+											"type": "string"
+										},
+										"7019": {
+											"type": "string"
+										},
+										"9007": {
+											"type": "string"
+										},
+										"10000": {
+											"type": "string"
+										},
+										"10001": {
+											"type": "string"
+										},
+										"10002": {
+											"type": "string"
+										},
+										"13001": {
+											"type": "string"
+										},
+										"13002": {
+											"type": "string"
+										},
+										"13003": {
+											"type": "string"
+										},
+										"13004": {
+											"type": "string"
+										},
+										"13005": {
+											"type": "string"
+										},
+										"13006": {
+											"type": "string"
+										},
+										"13007": {
+											"type": "string"
+										},
+										"13008": {
+											"type": "string"
+										},
+										"13009": {
+											"type": "string"
+										},
+										"13010": {
+											"type": "string"
+										},
+										"13011": {
+											"type": "string"
+										},
+										"13012": {
+											"type": "string"
+										},
+										"13013": {
+											"type": "string"
+										},
+										"13014": {
+											"type": "string"
+										},
+										"13015": {
+											"type": "string"
+										},
+										"13017": {
+											"type": "string"
+										},
+										"13018": {
+											"type": "string"
+										},
+										"13019": {
+											"type": "string"
+										},
+										"13020": {
+											"type": "string"
+										},
+										"13021": {
+											"type": "string"
+										},
+										"13023": {
+											"type": "string"
+										},
+										"13024": {
+											"type": "string"
+										},
+										"13025": {
+											"type": "string"
+										},
+										"13026": {
+											"type": "string"
+										},
+										"13027": {
+											"type": "string"
+										},
+										"13028": {
+											"type": "string"
+										},
+										"13029": {
+											"type": "string"
+										},
+										"13030": {
+											"type": "string"
+										}
+									}
+								},
+								"android": {
+									"type": "object",
+									"properties": {
+										"all": {
+											"type": "string"
+										},
+										"app_wallpaper": {
+											"type": "string"
+										},
+										"app_widgets": {
+											"type": "string"
+										},
+										"application": {
+											"type": "string"
+										},
+										"art_and_design": {
+											"type": "string"
+										},
+										"auto_and_vehicles": {
+											"type": "string"
+										},
+										"beauty": {
+											"type": "string"
+										},
+										"books_and_reference": {
+											"type": "string"
+										},
+										"business": {
+											"type": "string"
+										},
+										"comics": {
+											"type": "string"
+										},
+										"communication": {
+											"type": "string"
+										},
+										"dating": {
+											"type": "string"
+										},
+										"education": {
+											"type": "string"
+										},
+										"entertainment": {
+											"type": "string"
+										},
+										"events": {
+											"type": "string"
+										},
+										"family": {
+											"type": "string"
+										},
+										"family_action": {
+											"type": "string"
+										},
+										"family_braingames": {
+											"type": "string"
+										},
+										"family_create": {
+											"type": "string"
+										},
+										"family_education": {
+											"type": "string"
+										},
+										"family_musicvideo": {
+											"type": "string"
+										},
+										"family_pretend": {
+											"type": "string"
+										},
+										"finance": {
+											"type": "string"
+										},
+										"food_and_drink": {
+											"type": "string"
+										},
+										"game": {
+											"type": "string"
+										},
+										"game_action": {
+											"type": "string"
+										},
+										"game_adventure": {
+											"type": "string"
+										},
+										"game_arcade": {
+											"type": "string"
+										},
+										"game_board": {
+											"type": "string"
+										},
+										"game_card": {
+											"type": "string"
+										},
+										"game_casino": {
+											"type": "string"
+										},
+										"game_casual": {
+											"type": "string"
+										},
+										"game_educational": {
+											"type": "string"
+										},
+										"game_family": {
+											"type": "string"
+										},
+										"game_music": {
+											"type": "string"
+										},
+										"game_puzzle": {
+											"type": "string"
+										},
+										"game_racing": {
+											"type": "string"
+										},
+										"game_role_playing": {
+											"type": "string"
+										},
+										"game_simulation": {
+											"type": "string"
+										},
+										"game_sports": {
+											"type": "string"
+										},
+										"game_strategy": {
+											"type": "string"
+										},
+										"game_trivia": {
+											"type": "string"
+										},
+										"game_wallpaper": {
+											"type": "string"
+										},
+										"game_widgets": {
+											"type": "string"
+										},
+										"game_word": {
+											"type": "string"
+										},
+										"health_and_fitness": {
+											"type": "string"
+										},
+										"house_and_home": {
+											"type": "string"
+										},
+										"libraries_and_demo": {
+											"type": "string"
+										},
+										"lifestyle": {
+											"type": "string"
+										},
+										"maps_and_navigation": {
+											"type": "string"
+										},
+										"media_and_video": {
+											"type": "string"
+										},
+										"medical": {
+											"type": "string"
+										},
+										"music_and_audio": {
+											"type": "string"
+										},
+										"news_and_magazines": {
+											"type": "string"
+										},
+										"parenting": {
+											"type": "string"
+										},
+										"personalization": {
+											"type": "string"
+										},
+										"photography": {
+											"type": "string"
+										},
+										"productivity": {
+											"type": "string"
+										},
+										"shopping": {
+											"type": "string"
+										},
+										"social": {
+											"type": "string"
+										},
+										"sports": {
+											"type": "string"
+										},
+										"tools": {
+											"type": "string"
+										},
+										"transportation": {
+											"type": "string"
+										},
+										"travel_and_local": {
+											"type": "string"
+										},
+										"video_players": {
+											"type": "string"
+										},
+										"weather": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/HTTP_SensorTower_IDs')]"
@@ -1190,9 +1060,16 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy data1",
+						"name": "Create categories_raw table",
 						"type": "Copy",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "Drop Categories Raw Table",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -1224,18 +1101,20 @@
 								"mappings": [
 									{
 										"source": {
-											"path": "$['category_ids']['ios']['0']"
+											"path": "$['category_ids']['ios']['id']"
 										},
 										"sink": {
-											"name": "0"
+											"name": "id",
+											"type": "Int16"
 										}
 									},
 									{
 										"source": {
-											"path": "$['category_ids']['ios']['6000']"
+											"path": "$['category_ids']['ios']['0']"
 										},
 										"sink": {
-											"name": "6000"
+											"name": "0",
+											"type": "String"
 										}
 									},
 									{
@@ -1243,7 +1122,8 @@
 											"path": "$['category_ids']['ios']['6001']"
 										},
 										"sink": {
-											"name": "6001"
+											"name": "6001",
+											"type": "String"
 										}
 									},
 									{
@@ -1251,7 +1131,8 @@
 											"path": "$['category_ids']['ios']['6002']"
 										},
 										"sink": {
-											"name": "6002"
+											"name": "6002",
+											"type": "String"
 										}
 									},
 									{
@@ -1259,7 +1140,17 @@
 											"path": "$['category_ids']['ios']['6003']"
 										},
 										"sink": {
-											"name": "6003"
+											"name": "6003",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6000']"
+										},
+										"sink": {
+											"name": "6000",
+											"type": "String"
 										}
 									},
 									{
@@ -1267,7 +1158,8 @@
 											"path": "$['category_ids']['ios']['6004']"
 										},
 										"sink": {
-											"name": "6004"
+											"name": "6004",
+											"type": "String"
 										}
 									},
 									{
@@ -1275,7 +1167,8 @@
 											"path": "$['category_ids']['ios']['6005']"
 										},
 										"sink": {
-											"name": "6005"
+											"name": "6005",
+											"type": "String"
 										}
 									},
 									{
@@ -1283,7 +1176,8 @@
 											"path": "$['category_ids']['ios']['6006']"
 										},
 										"sink": {
-											"name": "6006"
+											"name": "6006",
+											"type": "String"
 										}
 									},
 									{
@@ -1291,7 +1185,8 @@
 											"path": "$['category_ids']['ios']['6007']"
 										},
 										"sink": {
-											"name": "6007"
+											"name": "6007",
+											"type": "String"
 										}
 									},
 									{
@@ -1299,7 +1194,8 @@
 											"path": "$['category_ids']['ios']['6008']"
 										},
 										"sink": {
-											"name": "6008"
+											"name": "6008",
+											"type": "String"
 										}
 									},
 									{
@@ -1307,7 +1203,8 @@
 											"path": "$['category_ids']['ios']['6009']"
 										},
 										"sink": {
-											"name": "6009"
+											"name": "6009",
+											"type": "String"
 										}
 									},
 									{
@@ -1315,7 +1212,8 @@
 											"path": "$['category_ids']['ios']['6010']"
 										},
 										"sink": {
-											"name": "6010"
+											"name": "6010",
+											"type": "String"
 										}
 									},
 									{
@@ -1323,7 +1221,8 @@
 											"path": "$['category_ids']['ios']['6011']"
 										},
 										"sink": {
-											"name": "6011"
+											"name": "6011",
+											"type": "String"
 										}
 									},
 									{
@@ -1331,7 +1230,8 @@
 											"path": "$['category_ids']['ios']['6012']"
 										},
 										"sink": {
-											"name": "6012"
+											"name": "6012",
+											"type": "String"
 										}
 									},
 									{
@@ -1339,7 +1239,8 @@
 											"path": "$['category_ids']['ios']['6013']"
 										},
 										"sink": {
-											"name": "6013"
+											"name": "6013",
+											"type": "String"
 										}
 									},
 									{
@@ -1347,7 +1248,8 @@
 											"path": "$['category_ids']['ios']['6014']"
 										},
 										"sink": {
-											"name": "6014"
+											"name": "6014",
+											"type": "String"
 										}
 									},
 									{
@@ -1355,7 +1257,8 @@
 											"path": "$['category_ids']['ios']['6015']"
 										},
 										"sink": {
-											"name": "6015"
+											"name": "6015",
+											"type": "String"
 										}
 									},
 									{
@@ -1363,7 +1266,8 @@
 											"path": "$['category_ids']['ios']['6016']"
 										},
 										"sink": {
-											"name": "6016"
+											"name": "6016",
+											"type": "String"
 										}
 									},
 									{
@@ -1371,7 +1275,8 @@
 											"path": "$['category_ids']['ios']['6017']"
 										},
 										"sink": {
-											"name": "6017"
+											"name": "6017",
+											"type": "String"
 										}
 									},
 									{
@@ -1379,7 +1284,8 @@
 											"path": "$['category_ids']['ios']['6018']"
 										},
 										"sink": {
-											"name": "6018"
+											"name": "6018",
+											"type": "String"
 										}
 									},
 									{
@@ -1387,7 +1293,8 @@
 											"path": "$['category_ids']['ios']['6020']"
 										},
 										"sink": {
-											"name": "6020"
+											"name": "6020",
+											"type": "String"
 										}
 									},
 									{
@@ -1395,7 +1302,8 @@
 											"path": "$['category_ids']['ios']['6021']"
 										},
 										"sink": {
-											"name": "6021"
+											"name": "6021",
+											"type": "String"
 										}
 									},
 									{
@@ -1403,7 +1311,8 @@
 											"path": "$['category_ids']['ios']['6022']"
 										},
 										"sink": {
-											"name": "6022"
+											"name": "6022",
+											"type": "String"
 										}
 									},
 									{
@@ -1411,7 +1320,8 @@
 											"path": "$['category_ids']['ios']['6023']"
 										},
 										"sink": {
-											"name": "6023"
+											"name": "6023",
+											"type": "String"
 										}
 									},
 									{
@@ -1419,7 +1329,8 @@
 											"path": "$['category_ids']['ios']['6024']"
 										},
 										"sink": {
-											"name": "6024"
+											"name": "6024",
+											"type": "String"
 										}
 									},
 									{
@@ -1427,7 +1338,8 @@
 											"path": "$['category_ids']['ios']['6026']"
 										},
 										"sink": {
-											"name": "6026"
+											"name": "6026",
+											"type": "String"
 										}
 									},
 									{
@@ -1435,7 +1347,8 @@
 											"path": "$['category_ids']['ios']['6027']"
 										},
 										"sink": {
-											"name": "6027"
+											"name": "6027",
+											"type": "String"
 										}
 									},
 									{
@@ -1443,7 +1356,8 @@
 											"path": "$['category_ids']['ios']['7001']"
 										},
 										"sink": {
-											"name": "7001"
+											"name": "7001",
+											"type": "String"
 										}
 									},
 									{
@@ -1451,7 +1365,8 @@
 											"path": "$['category_ids']['ios']['7002']"
 										},
 										"sink": {
-											"name": "7002"
+											"name": "7002",
+											"type": "String"
 										}
 									},
 									{
@@ -1459,7 +1374,8 @@
 											"path": "$['category_ids']['ios']['7003']"
 										},
 										"sink": {
-											"name": "7003"
+											"name": "7003",
+											"type": "String"
 										}
 									},
 									{
@@ -1467,7 +1383,8 @@
 											"path": "$['category_ids']['ios']['7004']"
 										},
 										"sink": {
-											"name": "7004"
+											"name": "7004",
+											"type": "String"
 										}
 									},
 									{
@@ -1475,7 +1392,8 @@
 											"path": "$['category_ids']['ios']['7005']"
 										},
 										"sink": {
-											"name": "7005"
+											"name": "7005",
+											"type": "String"
 										}
 									},
 									{
@@ -1483,7 +1401,8 @@
 											"path": "$['category_ids']['ios']['7006']"
 										},
 										"sink": {
-											"name": "7006"
+											"name": "7006",
+											"type": "String"
 										}
 									},
 									{
@@ -1491,7 +1410,8 @@
 											"path": "$['category_ids']['ios']['7007']"
 										},
 										"sink": {
-											"name": "7007"
+											"name": "7007",
+											"type": "String"
 										}
 									},
 									{
@@ -1499,7 +1419,8 @@
 											"path": "$['category_ids']['ios']['7008']"
 										},
 										"sink": {
-											"name": "7008"
+											"name": "7008",
+											"type": "String"
 										}
 									},
 									{
@@ -1507,7 +1428,8 @@
 											"path": "$['category_ids']['ios']['7009']"
 										},
 										"sink": {
-											"name": "7009"
+											"name": "7009",
+											"type": "String"
 										}
 									},
 									{
@@ -1515,7 +1437,8 @@
 											"path": "$['category_ids']['ios']['7011']"
 										},
 										"sink": {
-											"name": "7011"
+											"name": "7011",
+											"type": "String"
 										}
 									},
 									{
@@ -1523,7 +1446,8 @@
 											"path": "$['category_ids']['ios']['7012']"
 										},
 										"sink": {
-											"name": "7012"
+											"name": "7012",
+											"type": "String"
 										}
 									},
 									{
@@ -1531,7 +1455,8 @@
 											"path": "$['category_ids']['ios']['7013']"
 										},
 										"sink": {
-											"name": "7013"
+											"name": "7013",
+											"type": "String"
 										}
 									},
 									{
@@ -1539,7 +1464,8 @@
 											"path": "$['category_ids']['ios']['7014']"
 										},
 										"sink": {
-											"name": "7014"
+											"name": "7014",
+											"type": "String"
 										}
 									},
 									{
@@ -1547,7 +1473,8 @@
 											"path": "$['category_ids']['ios']['7015']"
 										},
 										"sink": {
-											"name": "7015"
+											"name": "7015",
+											"type": "String"
 										}
 									},
 									{
@@ -1555,7 +1482,8 @@
 											"path": "$['category_ids']['ios']['7016']"
 										},
 										"sink": {
-											"name": "7016"
+											"name": "7016",
+											"type": "String"
 										}
 									},
 									{
@@ -1563,7 +1491,8 @@
 											"path": "$['category_ids']['ios']['7017']"
 										},
 										"sink": {
-											"name": "7017"
+											"name": "7017",
+											"type": "String"
 										}
 									},
 									{
@@ -1571,7 +1500,8 @@
 											"path": "$['category_ids']['ios']['7018']"
 										},
 										"sink": {
-											"name": "7018"
+											"name": "7018",
+											"type": "String"
 										}
 									},
 									{
@@ -1579,7 +1509,8 @@
 											"path": "$['category_ids']['ios']['7019']"
 										},
 										"sink": {
-											"name": "7019"
+											"name": "7019",
+											"type": "String"
 										}
 									},
 									{
@@ -1587,7 +1518,8 @@
 											"path": "$['category_ids']['ios']['9007']"
 										},
 										"sink": {
-											"name": "9007"
+											"name": "9007",
+											"type": "String"
 										}
 									},
 									{
@@ -1595,7 +1527,8 @@
 											"path": "$['category_ids']['ios']['10000']"
 										},
 										"sink": {
-											"name": "10000"
+											"name": "10000",
+											"type": "String"
 										}
 									},
 									{
@@ -1603,7 +1536,8 @@
 											"path": "$['category_ids']['ios']['10001']"
 										},
 										"sink": {
-											"name": "10001"
+											"name": "10001",
+											"type": "String"
 										}
 									},
 									{
@@ -1611,7 +1545,8 @@
 											"path": "$['category_ids']['ios']['10002']"
 										},
 										"sink": {
-											"name": "10002"
+											"name": "10002",
+											"type": "String"
 										}
 									},
 									{
@@ -1619,7 +1554,8 @@
 											"path": "$['category_ids']['ios']['13001']"
 										},
 										"sink": {
-											"name": "13001"
+											"name": "13001",
+											"type": "String"
 										}
 									},
 									{
@@ -1627,7 +1563,8 @@
 											"path": "$['category_ids']['ios']['13002']"
 										},
 										"sink": {
-											"name": "13002"
+											"name": "13002",
+											"type": "String"
 										}
 									},
 									{
@@ -1635,7 +1572,8 @@
 											"path": "$['category_ids']['ios']['13003']"
 										},
 										"sink": {
-											"name": "13003"
+											"name": "13003",
+											"type": "String"
 										}
 									},
 									{
@@ -1643,7 +1581,8 @@
 											"path": "$['category_ids']['ios']['13004']"
 										},
 										"sink": {
-											"name": "13004"
+											"name": "13004",
+											"type": "String"
 										}
 									},
 									{
@@ -1651,7 +1590,8 @@
 											"path": "$['category_ids']['ios']['13005']"
 										},
 										"sink": {
-											"name": "13005"
+											"name": "13005",
+											"type": "String"
 										}
 									},
 									{
@@ -1659,7 +1599,8 @@
 											"path": "$['category_ids']['ios']['13006']"
 										},
 										"sink": {
-											"name": "13006"
+											"name": "13006",
+											"type": "String"
 										}
 									},
 									{
@@ -1667,7 +1608,8 @@
 											"path": "$['category_ids']['ios']['13007']"
 										},
 										"sink": {
-											"name": "13007"
+											"name": "13007",
+											"type": "String"
 										}
 									},
 									{
@@ -1675,7 +1617,8 @@
 											"path": "$['category_ids']['ios']['13008']"
 										},
 										"sink": {
-											"name": "13008"
+											"name": "13008",
+											"type": "String"
 										}
 									},
 									{
@@ -1683,7 +1626,8 @@
 											"path": "$['category_ids']['ios']['13009']"
 										},
 										"sink": {
-											"name": "13009"
+											"name": "13009",
+											"type": "String"
 										}
 									},
 									{
@@ -1691,7 +1635,8 @@
 											"path": "$['category_ids']['ios']['13010']"
 										},
 										"sink": {
-											"name": "13010"
+											"name": "13010",
+											"type": "String"
 										}
 									},
 									{
@@ -1699,7 +1644,8 @@
 											"path": "$['category_ids']['ios']['13011']"
 										},
 										"sink": {
-											"name": "13011"
+											"name": "13011",
+											"type": "String"
 										}
 									},
 									{
@@ -1707,7 +1653,8 @@
 											"path": "$['category_ids']['ios']['13012']"
 										},
 										"sink": {
-											"name": "13012"
+											"name": "13012",
+											"type": "String"
 										}
 									},
 									{
@@ -1715,7 +1662,8 @@
 											"path": "$['category_ids']['ios']['13013']"
 										},
 										"sink": {
-											"name": "13013"
+											"name": "13013",
+											"type": "String"
 										}
 									},
 									{
@@ -1723,7 +1671,8 @@
 											"path": "$['category_ids']['ios']['13014']"
 										},
 										"sink": {
-											"name": "13014"
+											"name": "13014",
+											"type": "String"
 										}
 									},
 									{
@@ -1731,7 +1680,8 @@
 											"path": "$['category_ids']['ios']['13015']"
 										},
 										"sink": {
-											"name": "13015"
+											"name": "13015",
+											"type": "String"
 										}
 									},
 									{
@@ -1739,7 +1689,8 @@
 											"path": "$['category_ids']['ios']['13017']"
 										},
 										"sink": {
-											"name": "13017"
+											"name": "13017",
+											"type": "String"
 										}
 									},
 									{
@@ -1747,7 +1698,8 @@
 											"path": "$['category_ids']['ios']['13018']"
 										},
 										"sink": {
-											"name": "13018"
+											"name": "13018",
+											"type": "String"
 										}
 									},
 									{
@@ -1755,7 +1707,8 @@
 											"path": "$['category_ids']['ios']['13019']"
 										},
 										"sink": {
-											"name": "13019"
+											"name": "13019",
+											"type": "String"
 										}
 									},
 									{
@@ -1763,7 +1716,8 @@
 											"path": "$['category_ids']['ios']['13020']"
 										},
 										"sink": {
-											"name": "13020"
+											"name": "13020",
+											"type": "String"
 										}
 									},
 									{
@@ -1771,7 +1725,8 @@
 											"path": "$['category_ids']['ios']['13021']"
 										},
 										"sink": {
-											"name": "13021"
+											"name": "13021",
+											"type": "String"
 										}
 									},
 									{
@@ -1779,7 +1734,8 @@
 											"path": "$['category_ids']['ios']['13023']"
 										},
 										"sink": {
-											"name": "13023"
+											"name": "13023",
+											"type": "String"
 										}
 									},
 									{
@@ -1787,7 +1743,8 @@
 											"path": "$['category_ids']['ios']['13024']"
 										},
 										"sink": {
-											"name": "13024"
+											"name": "13024",
+											"type": "String"
 										}
 									},
 									{
@@ -1795,7 +1752,8 @@
 											"path": "$['category_ids']['ios']['13025']"
 										},
 										"sink": {
-											"name": "13025"
+											"name": "13025",
+											"type": "String"
 										}
 									},
 									{
@@ -1803,7 +1761,8 @@
 											"path": "$['category_ids']['ios']['13026']"
 										},
 										"sink": {
-											"name": "13026"
+											"name": "13026",
+											"type": "String"
 										}
 									},
 									{
@@ -1811,7 +1770,8 @@
 											"path": "$['category_ids']['ios']['13027']"
 										},
 										"sink": {
-											"name": "13027"
+											"name": "13027",
+											"type": "String"
 										}
 									},
 									{
@@ -1819,7 +1779,8 @@
 											"path": "$['category_ids']['ios']['13028']"
 										},
 										"sink": {
-											"name": "13028"
+											"name": "13028",
+											"type": "String"
 										}
 									},
 									{
@@ -1827,7 +1788,8 @@
 											"path": "$['category_ids']['ios']['13029']"
 										},
 										"sink": {
-											"name": "13029"
+											"name": "13029",
+											"type": "String"
 										}
 									},
 									{
@@ -1835,7 +1797,8 @@
 											"path": "$['category_ids']['ios']['13030']"
 										},
 										"sink": {
-											"name": "13030"
+											"name": "13030",
+											"type": "String"
 										}
 									},
 									{
@@ -1843,7 +1806,8 @@
 											"path": "$['category_ids']['android']['all']"
 										},
 										"sink": {
-											"name": "all"
+											"name": "all",
+											"type": "String"
 										}
 									},
 									{
@@ -1851,7 +1815,8 @@
 											"path": "$['category_ids']['android']['app_wallpaper']"
 										},
 										"sink": {
-											"name": "app_wallpaper"
+											"name": "app_wallpaper",
+											"type": "String"
 										}
 									},
 									{
@@ -1859,7 +1824,8 @@
 											"path": "$['category_ids']['android']['app_widgets']"
 										},
 										"sink": {
-											"name": "app_widgets"
+											"name": "app_widgets",
+											"type": "String"
 										}
 									},
 									{
@@ -1867,7 +1833,8 @@
 											"path": "$['category_ids']['android']['application']"
 										},
 										"sink": {
-											"name": "application"
+											"name": "application",
+											"type": "String"
 										}
 									},
 									{
@@ -1875,7 +1842,8 @@
 											"path": "$['category_ids']['android']['art_and_design']"
 										},
 										"sink": {
-											"name": "art_and_design"
+											"name": "art_and_design",
+											"type": "String"
 										}
 									},
 									{
@@ -1883,7 +1851,8 @@
 											"path": "$['category_ids']['android']['auto_and_vehicles']"
 										},
 										"sink": {
-											"name": "auto_and_vehicles"
+											"name": "auto_and_vehicles",
+											"type": "String"
 										}
 									},
 									{
@@ -1891,7 +1860,8 @@
 											"path": "$['category_ids']['android']['beauty']"
 										},
 										"sink": {
-											"name": "beauty"
+											"name": "beauty",
+											"type": "String"
 										}
 									},
 									{
@@ -1899,7 +1869,8 @@
 											"path": "$['category_ids']['android']['books_and_reference']"
 										},
 										"sink": {
-											"name": "books_and_reference"
+											"name": "books_and_reference",
+											"type": "String"
 										}
 									},
 									{
@@ -1907,7 +1878,8 @@
 											"path": "$['category_ids']['android']['business']"
 										},
 										"sink": {
-											"name": "business"
+											"name": "business",
+											"type": "String"
 										}
 									},
 									{
@@ -1915,7 +1887,8 @@
 											"path": "$['category_ids']['android']['comics']"
 										},
 										"sink": {
-											"name": "comics"
+											"name": "comics",
+											"type": "String"
 										}
 									},
 									{
@@ -1923,7 +1896,8 @@
 											"path": "$['category_ids']['android']['communication']"
 										},
 										"sink": {
-											"name": "communication"
+											"name": "communication",
+											"type": "String"
 										}
 									},
 									{
@@ -1931,7 +1905,8 @@
 											"path": "$['category_ids']['android']['dating']"
 										},
 										"sink": {
-											"name": "dating"
+											"name": "dating",
+											"type": "String"
 										}
 									},
 									{
@@ -1939,7 +1914,8 @@
 											"path": "$['category_ids']['android']['education']"
 										},
 										"sink": {
-											"name": "education"
+											"name": "education",
+											"type": "String"
 										}
 									},
 									{
@@ -1947,7 +1923,8 @@
 											"path": "$['category_ids']['android']['entertainment']"
 										},
 										"sink": {
-											"name": "entertainment"
+											"name": "entertainment",
+											"type": "String"
 										}
 									},
 									{
@@ -1955,7 +1932,8 @@
 											"path": "$['category_ids']['android']['events']"
 										},
 										"sink": {
-											"name": "events"
+											"name": "events",
+											"type": "String"
 										}
 									},
 									{
@@ -1963,7 +1941,8 @@
 											"path": "$['category_ids']['android']['family']"
 										},
 										"sink": {
-											"name": "family"
+											"name": "family",
+											"type": "String"
 										}
 									},
 									{
@@ -1971,7 +1950,8 @@
 											"path": "$['category_ids']['android']['family_action']"
 										},
 										"sink": {
-											"name": "family_action"
+											"name": "family_action",
+											"type": "String"
 										}
 									},
 									{
@@ -1979,7 +1959,8 @@
 											"path": "$['category_ids']['android']['family_braingames']"
 										},
 										"sink": {
-											"name": "family_braingames"
+											"name": "family_braingames",
+											"type": "String"
 										}
 									},
 									{
@@ -1987,7 +1968,8 @@
 											"path": "$['category_ids']['android']['family_create']"
 										},
 										"sink": {
-											"name": "family_create"
+											"name": "family_create",
+											"type": "String"
 										}
 									},
 									{
@@ -1995,7 +1977,8 @@
 											"path": "$['category_ids']['android']['family_education']"
 										},
 										"sink": {
-											"name": "family_education"
+											"name": "family_education",
+											"type": "String"
 										}
 									},
 									{
@@ -2003,7 +1986,8 @@
 											"path": "$['category_ids']['android']['family_musicvideo']"
 										},
 										"sink": {
-											"name": "family_musicvideo"
+											"name": "family_musicvideo",
+											"type": "String"
 										}
 									},
 									{
@@ -2011,7 +1995,8 @@
 											"path": "$['category_ids']['android']['family_pretend']"
 										},
 										"sink": {
-											"name": "family_pretend"
+											"name": "family_pretend",
+											"type": "String"
 										}
 									},
 									{
@@ -2019,7 +2004,8 @@
 											"path": "$['category_ids']['android']['finance']"
 										},
 										"sink": {
-											"name": "finance"
+											"name": "finance",
+											"type": "String"
 										}
 									},
 									{
@@ -2027,7 +2013,8 @@
 											"path": "$['category_ids']['android']['food_and_drink']"
 										},
 										"sink": {
-											"name": "food_and_drink"
+											"name": "food_and_drink",
+											"type": "String"
 										}
 									},
 									{
@@ -2035,7 +2022,8 @@
 											"path": "$['category_ids']['android']['game']"
 										},
 										"sink": {
-											"name": "game"
+											"name": "game",
+											"type": "String"
 										}
 									},
 									{
@@ -2043,7 +2031,8 @@
 											"path": "$['category_ids']['android']['game_action']"
 										},
 										"sink": {
-											"name": "game_action"
+											"name": "game_action",
+											"type": "String"
 										}
 									},
 									{
@@ -2051,7 +2040,8 @@
 											"path": "$['category_ids']['android']['game_adventure']"
 										},
 										"sink": {
-											"name": "game_adventure"
+											"name": "game_adventure",
+											"type": "String"
 										}
 									},
 									{
@@ -2059,7 +2049,8 @@
 											"path": "$['category_ids']['android']['game_arcade']"
 										},
 										"sink": {
-											"name": "game_arcade"
+											"name": "game_arcade",
+											"type": "String"
 										}
 									},
 									{
@@ -2067,7 +2058,8 @@
 											"path": "$['category_ids']['android']['game_board']"
 										},
 										"sink": {
-											"name": "game_board"
+											"name": "game_board",
+											"type": "String"
 										}
 									},
 									{
@@ -2075,7 +2067,8 @@
 											"path": "$['category_ids']['android']['game_card']"
 										},
 										"sink": {
-											"name": "game_card"
+											"name": "game_card",
+											"type": "String"
 										}
 									},
 									{
@@ -2083,7 +2076,8 @@
 											"path": "$['category_ids']['android']['game_casino']"
 										},
 										"sink": {
-											"name": "game_casino"
+											"name": "game_casino",
+											"type": "String"
 										}
 									},
 									{
@@ -2091,7 +2085,8 @@
 											"path": "$['category_ids']['android']['game_casual']"
 										},
 										"sink": {
-											"name": "game_casual"
+											"name": "game_casual",
+											"type": "String"
 										}
 									},
 									{
@@ -2099,7 +2094,8 @@
 											"path": "$['category_ids']['android']['game_educational']"
 										},
 										"sink": {
-											"name": "game_educational"
+											"name": "game_educational",
+											"type": "String"
 										}
 									},
 									{
@@ -2107,7 +2103,8 @@
 											"path": "$['category_ids']['android']['game_family']"
 										},
 										"sink": {
-											"name": "game_family"
+											"name": "game_family",
+											"type": "String"
 										}
 									},
 									{
@@ -2115,7 +2112,8 @@
 											"path": "$['category_ids']['android']['game_music']"
 										},
 										"sink": {
-											"name": "game_music"
+											"name": "game_music",
+											"type": "String"
 										}
 									},
 									{
@@ -2123,7 +2121,8 @@
 											"path": "$['category_ids']['android']['game_puzzle']"
 										},
 										"sink": {
-											"name": "game_puzzle"
+											"name": "game_puzzle",
+											"type": "String"
 										}
 									},
 									{
@@ -2131,7 +2130,8 @@
 											"path": "$['category_ids']['android']['game_racing']"
 										},
 										"sink": {
-											"name": "game_racing"
+											"name": "game_racing",
+											"type": "String"
 										}
 									},
 									{
@@ -2139,7 +2139,8 @@
 											"path": "$['category_ids']['android']['game_role_playing']"
 										},
 										"sink": {
-											"name": "game_role_playing"
+											"name": "game_role_playing",
+											"type": "String"
 										}
 									},
 									{
@@ -2147,7 +2148,8 @@
 											"path": "$['category_ids']['android']['game_simulation']"
 										},
 										"sink": {
-											"name": "game_simulation"
+											"name": "game_simulation",
+											"type": "String"
 										}
 									},
 									{
@@ -2155,7 +2157,8 @@
 											"path": "$['category_ids']['android']['game_sports']"
 										},
 										"sink": {
-											"name": "game_sports"
+											"name": "game_sports",
+											"type": "String"
 										}
 									},
 									{
@@ -2163,7 +2166,8 @@
 											"path": "$['category_ids']['android']['game_strategy']"
 										},
 										"sink": {
-											"name": "game_strategy"
+											"name": "game_strategy",
+											"type": "String"
 										}
 									},
 									{
@@ -2171,7 +2175,8 @@
 											"path": "$['category_ids']['android']['game_trivia']"
 										},
 										"sink": {
-											"name": "game_trivia"
+											"name": "game_trivia",
+											"type": "String"
 										}
 									},
 									{
@@ -2179,7 +2184,8 @@
 											"path": "$['category_ids']['android']['game_wallpaper']"
 										},
 										"sink": {
-											"name": "game_wallpaper"
+											"name": "game_wallpaper",
+											"type": "String"
 										}
 									},
 									{
@@ -2187,7 +2193,8 @@
 											"path": "$['category_ids']['android']['game_widgets']"
 										},
 										"sink": {
-											"name": "game_widgets"
+											"name": "game_widgets",
+											"type": "String"
 										}
 									},
 									{
@@ -2195,7 +2202,8 @@
 											"path": "$['category_ids']['android']['game_word']"
 										},
 										"sink": {
-											"name": "game_word"
+											"name": "game_word",
+											"type": "String"
 										}
 									},
 									{
@@ -2203,7 +2211,8 @@
 											"path": "$['category_ids']['android']['health_and_fitness']"
 										},
 										"sink": {
-											"name": "health_and_fitness"
+											"name": "health_and_fitness",
+											"type": "String"
 										}
 									},
 									{
@@ -2211,7 +2220,8 @@
 											"path": "$['category_ids']['android']['house_and_home']"
 										},
 										"sink": {
-											"name": "house_and_home"
+											"name": "house_and_home",
+											"type": "String"
 										}
 									},
 									{
@@ -2219,7 +2229,8 @@
 											"path": "$['category_ids']['android']['libraries_and_demo']"
 										},
 										"sink": {
-											"name": "libraries_and_demo"
+											"name": "libraries_and_demo",
+											"type": "String"
 										}
 									},
 									{
@@ -2227,7 +2238,8 @@
 											"path": "$['category_ids']['android']['lifestyle']"
 										},
 										"sink": {
-											"name": "lifestyle"
+											"name": "lifestyle",
+											"type": "String"
 										}
 									},
 									{
@@ -2235,7 +2247,8 @@
 											"path": "$['category_ids']['android']['maps_and_navigation']"
 										},
 										"sink": {
-											"name": "maps_and_navigation"
+											"name": "maps_and_navigation",
+											"type": "String"
 										}
 									},
 									{
@@ -2243,7 +2256,8 @@
 											"path": "$['category_ids']['android']['media_and_video']"
 										},
 										"sink": {
-											"name": "media_and_video"
+											"name": "media_and_video",
+											"type": "String"
 										}
 									},
 									{
@@ -2251,7 +2265,8 @@
 											"path": "$['category_ids']['android']['medical']"
 										},
 										"sink": {
-											"name": "medical"
+											"name": "medical",
+											"type": "String"
 										}
 									},
 									{
@@ -2259,7 +2274,8 @@
 											"path": "$['category_ids']['android']['music_and_audio']"
 										},
 										"sink": {
-											"name": "music_and_audio"
+											"name": "music_and_audio",
+											"type": "String"
 										}
 									},
 									{
@@ -2267,7 +2283,8 @@
 											"path": "$['category_ids']['android']['news_and_magazines']"
 										},
 										"sink": {
-											"name": "news_and_magazines"
+											"name": "news_and_magazines",
+											"type": "String"
 										}
 									},
 									{
@@ -2275,7 +2292,8 @@
 											"path": "$['category_ids']['android']['parenting']"
 										},
 										"sink": {
-											"name": "parenting"
+											"name": "parenting",
+											"type": "String"
 										}
 									},
 									{
@@ -2283,7 +2301,8 @@
 											"path": "$['category_ids']['android']['personalization']"
 										},
 										"sink": {
-											"name": "personalization"
+											"name": "personalization",
+											"type": "String"
 										}
 									},
 									{
@@ -2291,7 +2310,8 @@
 											"path": "$['category_ids']['android']['photography']"
 										},
 										"sink": {
-											"name": "photography"
+											"name": "photography",
+											"type": "String"
 										}
 									},
 									{
@@ -2299,7 +2319,8 @@
 											"path": "$['category_ids']['android']['productivity']"
 										},
 										"sink": {
-											"name": "productivity"
+											"name": "productivity",
+											"type": "String"
 										}
 									},
 									{
@@ -2307,7 +2328,8 @@
 											"path": "$['category_ids']['android']['shopping']"
 										},
 										"sink": {
-											"name": "shopping"
+											"name": "shopping",
+											"type": "String"
 										}
 									},
 									{
@@ -2315,7 +2337,8 @@
 											"path": "$['category_ids']['android']['social']"
 										},
 										"sink": {
-											"name": "social"
+											"name": "social",
+											"type": "String"
 										}
 									},
 									{
@@ -2323,7 +2346,8 @@
 											"path": "$['category_ids']['android']['sports']"
 										},
 										"sink": {
-											"name": "sports"
+											"name": "sports",
+											"type": "String"
 										}
 									},
 									{
@@ -2331,7 +2355,8 @@
 											"path": "$['category_ids']['android']['tools']"
 										},
 										"sink": {
-											"name": "tools"
+											"name": "tools",
+											"type": "String"
 										}
 									},
 									{
@@ -2339,7 +2364,8 @@
 											"path": "$['category_ids']['android']['transportation']"
 										},
 										"sink": {
-											"name": "transportation"
+											"name": "transportation",
+											"type": "String"
 										}
 									},
 									{
@@ -2347,7 +2373,8 @@
 											"path": "$['category_ids']['android']['travel_and_local']"
 										},
 										"sink": {
-											"name": "travel_and_local"
+											"name": "travel_and_local",
+											"type": "String"
 										}
 									},
 									{
@@ -2355,7 +2382,8 @@
 											"path": "$['category_ids']['android']['video_players']"
 										},
 										"sink": {
-											"name": "video_players"
+											"name": "video_players",
+											"type": "String"
 										}
 									},
 									{
@@ -2363,11 +2391,13 @@
 											"path": "$['category_ids']['android']['weather']"
 										},
 										"sink": {
-											"name": "weather"
+											"name": "weather",
+											"type": "String"
 										}
 									}
 								],
-								"collectionReference": ""
+								"collectionReference": "",
+								"mapComplexValuesToString": false
 							}
 						},
 						"inputs": [
@@ -2384,13 +2414,34 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Drop Categories Raw Table",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_drop_categories_raw]"
+						},
+						"linkedServiceName": {
+							"referenceName": "ASQL_orka_Entertainment",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
 				"annotations": []
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/HTTP_Sensor_Tower_Categories')]",
-				"[concat(variables('factoryId'), '/datasets/ASQL_Sensor_Tower_Categories')]"
+				"[concat(variables('factoryId'), '/datasets/ASQL_Sensor_Tower_Categories')]",
+				"[concat(variables('factoryId'), '/linkedServices/ASQL_orka_Entertainment')]"
 			]
 		},
 		{
