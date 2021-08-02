@@ -13,6 +13,454 @@
 				"relativeUrl": "category_ids.json?auth_token=LyrjK-Gg2cBq8ZcrSwWv"
 			}
 		},
-		"schema": {}
+		"schema": {
+			"type": "object",
+			"properties": {
+				"category_ids": {
+					"type": "object",
+					"properties": {
+						"ios": {
+							"type": "object",
+							"properties": {
+								"0": {
+									"type": "string"
+								},
+								"6000": {
+									"type": "string"
+								},
+								"6001": {
+									"type": "string"
+								},
+								"6002": {
+									"type": "string"
+								},
+								"6003": {
+									"type": "string"
+								},
+								"6004": {
+									"type": "string"
+								},
+								"6005": {
+									"type": "string"
+								},
+								"6006": {
+									"type": "string"
+								},
+								"6007": {
+									"type": "string"
+								},
+								"6008": {
+									"type": "string"
+								},
+								"6009": {
+									"type": "string"
+								},
+								"6010": {
+									"type": "string"
+								},
+								"6011": {
+									"type": "string"
+								},
+								"6012": {
+									"type": "string"
+								},
+								"6013": {
+									"type": "string"
+								},
+								"6014": {
+									"type": "string"
+								},
+								"6015": {
+									"type": "string"
+								},
+								"6016": {
+									"type": "string"
+								},
+								"6017": {
+									"type": "string"
+								},
+								"6018": {
+									"type": "string"
+								},
+								"6020": {
+									"type": "string"
+								},
+								"6021": {
+									"type": "string"
+								},
+								"6022": {
+									"type": "string"
+								},
+								"6023": {
+									"type": "string"
+								},
+								"6024": {
+									"type": "string"
+								},
+								"6026": {
+									"type": "string"
+								},
+								"6027": {
+									"type": "string"
+								},
+								"7001": {
+									"type": "string"
+								},
+								"7002": {
+									"type": "string"
+								},
+								"7003": {
+									"type": "string"
+								},
+								"7004": {
+									"type": "string"
+								},
+								"7005": {
+									"type": "string"
+								},
+								"7006": {
+									"type": "string"
+								},
+								"7007": {
+									"type": "string"
+								},
+								"7008": {
+									"type": "string"
+								},
+								"7009": {
+									"type": "string"
+								},
+								"7011": {
+									"type": "string"
+								},
+								"7012": {
+									"type": "string"
+								},
+								"7013": {
+									"type": "string"
+								},
+								"7014": {
+									"type": "string"
+								},
+								"7015": {
+									"type": "string"
+								},
+								"7016": {
+									"type": "string"
+								},
+								"7017": {
+									"type": "string"
+								},
+								"7018": {
+									"type": "string"
+								},
+								"7019": {
+									"type": "string"
+								},
+								"9007": {
+									"type": "string"
+								},
+								"10000": {
+									"type": "string"
+								},
+								"10001": {
+									"type": "string"
+								},
+								"10002": {
+									"type": "string"
+								},
+								"13001": {
+									"type": "string"
+								},
+								"13002": {
+									"type": "string"
+								},
+								"13003": {
+									"type": "string"
+								},
+								"13004": {
+									"type": "string"
+								},
+								"13005": {
+									"type": "string"
+								},
+								"13006": {
+									"type": "string"
+								},
+								"13007": {
+									"type": "string"
+								},
+								"13008": {
+									"type": "string"
+								},
+								"13009": {
+									"type": "string"
+								},
+								"13010": {
+									"type": "string"
+								},
+								"13011": {
+									"type": "string"
+								},
+								"13012": {
+									"type": "string"
+								},
+								"13013": {
+									"type": "string"
+								},
+								"13014": {
+									"type": "string"
+								},
+								"13015": {
+									"type": "string"
+								},
+								"13017": {
+									"type": "string"
+								},
+								"13018": {
+									"type": "string"
+								},
+								"13019": {
+									"type": "string"
+								},
+								"13020": {
+									"type": "string"
+								},
+								"13021": {
+									"type": "string"
+								},
+								"13023": {
+									"type": "string"
+								},
+								"13024": {
+									"type": "string"
+								},
+								"13025": {
+									"type": "string"
+								},
+								"13026": {
+									"type": "string"
+								},
+								"13027": {
+									"type": "string"
+								},
+								"13028": {
+									"type": "string"
+								},
+								"13029": {
+									"type": "string"
+								},
+								"13030": {
+									"type": "string"
+								}
+							}
+						},
+						"android": {
+							"type": "object",
+							"properties": {
+								"all": {
+									"type": "string"
+								},
+								"app_wallpaper": {
+									"type": "string"
+								},
+								"app_widgets": {
+									"type": "string"
+								},
+								"application": {
+									"type": "string"
+								},
+								"art_and_design": {
+									"type": "string"
+								},
+								"auto_and_vehicles": {
+									"type": "string"
+								},
+								"beauty": {
+									"type": "string"
+								},
+								"books_and_reference": {
+									"type": "string"
+								},
+								"business": {
+									"type": "string"
+								},
+								"comics": {
+									"type": "string"
+								},
+								"communication": {
+									"type": "string"
+								},
+								"dating": {
+									"type": "string"
+								},
+								"education": {
+									"type": "string"
+								},
+								"entertainment": {
+									"type": "string"
+								},
+								"events": {
+									"type": "string"
+								},
+								"family": {
+									"type": "string"
+								},
+								"family_action": {
+									"type": "string"
+								},
+								"family_braingames": {
+									"type": "string"
+								},
+								"family_create": {
+									"type": "string"
+								},
+								"family_education": {
+									"type": "string"
+								},
+								"family_musicvideo": {
+									"type": "string"
+								},
+								"family_pretend": {
+									"type": "string"
+								},
+								"finance": {
+									"type": "string"
+								},
+								"food_and_drink": {
+									"type": "string"
+								},
+								"game": {
+									"type": "string"
+								},
+								"game_action": {
+									"type": "string"
+								},
+								"game_adventure": {
+									"type": "string"
+								},
+								"game_arcade": {
+									"type": "string"
+								},
+								"game_board": {
+									"type": "string"
+								},
+								"game_card": {
+									"type": "string"
+								},
+								"game_casino": {
+									"type": "string"
+								},
+								"game_casual": {
+									"type": "string"
+								},
+								"game_educational": {
+									"type": "string"
+								},
+								"game_family": {
+									"type": "string"
+								},
+								"game_music": {
+									"type": "string"
+								},
+								"game_puzzle": {
+									"type": "string"
+								},
+								"game_racing": {
+									"type": "string"
+								},
+								"game_role_playing": {
+									"type": "string"
+								},
+								"game_simulation": {
+									"type": "string"
+								},
+								"game_sports": {
+									"type": "string"
+								},
+								"game_strategy": {
+									"type": "string"
+								},
+								"game_trivia": {
+									"type": "string"
+								},
+								"game_wallpaper": {
+									"type": "string"
+								},
+								"game_widgets": {
+									"type": "string"
+								},
+								"game_word": {
+									"type": "string"
+								},
+								"health_and_fitness": {
+									"type": "string"
+								},
+								"house_and_home": {
+									"type": "string"
+								},
+								"libraries_and_demo": {
+									"type": "string"
+								},
+								"lifestyle": {
+									"type": "string"
+								},
+								"maps_and_navigation": {
+									"type": "string"
+								},
+								"media_and_video": {
+									"type": "string"
+								},
+								"medical": {
+									"type": "string"
+								},
+								"music_and_audio": {
+									"type": "string"
+								},
+								"news_and_magazines": {
+									"type": "string"
+								},
+								"parenting": {
+									"type": "string"
+								},
+								"personalization": {
+									"type": "string"
+								},
+								"photography": {
+									"type": "string"
+								},
+								"productivity": {
+									"type": "string"
+								},
+								"shopping": {
+									"type": "string"
+								},
+								"social": {
+									"type": "string"
+								},
+								"sports": {
+									"type": "string"
+								},
+								"tools": {
+									"type": "string"
+								},
+								"transportation": {
+									"type": "string"
+								},
+								"travel_and_local": {
+									"type": "string"
+								},
+								"video_players": {
+									"type": "string"
+								},
+								"weather": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
