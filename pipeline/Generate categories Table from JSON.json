@@ -3,11 +3,11 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Create categories_raw table",
+				"name": "Create categories_raw Table",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Drop Categories Raw Table",
+						"activity": "Drop categories_raw Table",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -1357,7 +1357,7 @@
 				]
 			},
 			{
-				"name": "Drop Categories Raw Table",
+				"name": "Drop categories_raw Table",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [],
 				"policy": {
@@ -1381,7 +1381,7 @@
 				"type": "ExecuteDataFlow",
 				"dependsOn": [
 					{
-						"activity": "Create categories_raw table",
+						"activity": "Create categories_raw Table",
 						"dependencyConditions": [
 							"Succeeded"
 						]
