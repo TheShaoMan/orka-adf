@@ -1,0 +1,1469 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "orka-adf"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Generate categories Table from JSON')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Create categories_raw table",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Drop categories Raw Table",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "JsonSource",
+								"storeSettings": {
+									"type": "HttpReadSettings",
+									"requestMethod": "GET"
+								},
+								"formatSettings": {
+									"type": "JsonReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['id']"
+										},
+										"sink": {
+											"name": "id",
+											"type": "Int16"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['0']"
+										},
+										"sink": {
+											"name": "0",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6001']"
+										},
+										"sink": {
+											"name": "6001",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6002']"
+										},
+										"sink": {
+											"name": "6002",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6003']"
+										},
+										"sink": {
+											"name": "6003",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6000']"
+										},
+										"sink": {
+											"name": "6000",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6004']"
+										},
+										"sink": {
+											"name": "6004",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6005']"
+										},
+										"sink": {
+											"name": "6005",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6006']"
+										},
+										"sink": {
+											"name": "6006",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6007']"
+										},
+										"sink": {
+											"name": "6007",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6008']"
+										},
+										"sink": {
+											"name": "6008",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6009']"
+										},
+										"sink": {
+											"name": "6009",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6010']"
+										},
+										"sink": {
+											"name": "6010",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6011']"
+										},
+										"sink": {
+											"name": "6011",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6012']"
+										},
+										"sink": {
+											"name": "6012",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6013']"
+										},
+										"sink": {
+											"name": "6013",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6014']"
+										},
+										"sink": {
+											"name": "6014",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6015']"
+										},
+										"sink": {
+											"name": "6015",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6016']"
+										},
+										"sink": {
+											"name": "6016",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6017']"
+										},
+										"sink": {
+											"name": "6017",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6018']"
+										},
+										"sink": {
+											"name": "6018",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6020']"
+										},
+										"sink": {
+											"name": "6020",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6021']"
+										},
+										"sink": {
+											"name": "6021",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6022']"
+										},
+										"sink": {
+											"name": "6022",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6023']"
+										},
+										"sink": {
+											"name": "6023",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6024']"
+										},
+										"sink": {
+											"name": "6024",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6026']"
+										},
+										"sink": {
+											"name": "6026",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['6027']"
+										},
+										"sink": {
+											"name": "6027",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7001']"
+										},
+										"sink": {
+											"name": "7001",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7002']"
+										},
+										"sink": {
+											"name": "7002",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7003']"
+										},
+										"sink": {
+											"name": "7003",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7004']"
+										},
+										"sink": {
+											"name": "7004",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7005']"
+										},
+										"sink": {
+											"name": "7005",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7006']"
+										},
+										"sink": {
+											"name": "7006",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7007']"
+										},
+										"sink": {
+											"name": "7007",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7008']"
+										},
+										"sink": {
+											"name": "7008",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7009']"
+										},
+										"sink": {
+											"name": "7009",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7011']"
+										},
+										"sink": {
+											"name": "7011",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7012']"
+										},
+										"sink": {
+											"name": "7012",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7013']"
+										},
+										"sink": {
+											"name": "7013",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7014']"
+										},
+										"sink": {
+											"name": "7014",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7015']"
+										},
+										"sink": {
+											"name": "7015",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7016']"
+										},
+										"sink": {
+											"name": "7016",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7017']"
+										},
+										"sink": {
+											"name": "7017",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7018']"
+										},
+										"sink": {
+											"name": "7018",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['7019']"
+										},
+										"sink": {
+											"name": "7019",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['9007']"
+										},
+										"sink": {
+											"name": "9007",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['10000']"
+										},
+										"sink": {
+											"name": "10000",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['10001']"
+										},
+										"sink": {
+											"name": "10001",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['10002']"
+										},
+										"sink": {
+											"name": "10002",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13001']"
+										},
+										"sink": {
+											"name": "13001",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13002']"
+										},
+										"sink": {
+											"name": "13002",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13003']"
+										},
+										"sink": {
+											"name": "13003",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13004']"
+										},
+										"sink": {
+											"name": "13004",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13005']"
+										},
+										"sink": {
+											"name": "13005",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13006']"
+										},
+										"sink": {
+											"name": "13006",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13007']"
+										},
+										"sink": {
+											"name": "13007",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13008']"
+										},
+										"sink": {
+											"name": "13008",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13009']"
+										},
+										"sink": {
+											"name": "13009",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13010']"
+										},
+										"sink": {
+											"name": "13010",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13011']"
+										},
+										"sink": {
+											"name": "13011",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13012']"
+										},
+										"sink": {
+											"name": "13012",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13013']"
+										},
+										"sink": {
+											"name": "13013",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13014']"
+										},
+										"sink": {
+											"name": "13014",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13015']"
+										},
+										"sink": {
+											"name": "13015",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13017']"
+										},
+										"sink": {
+											"name": "13017",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13018']"
+										},
+										"sink": {
+											"name": "13018",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13019']"
+										},
+										"sink": {
+											"name": "13019",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13020']"
+										},
+										"sink": {
+											"name": "13020",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13021']"
+										},
+										"sink": {
+											"name": "13021",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13023']"
+										},
+										"sink": {
+											"name": "13023",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13024']"
+										},
+										"sink": {
+											"name": "13024",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13025']"
+										},
+										"sink": {
+											"name": "13025",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13026']"
+										},
+										"sink": {
+											"name": "13026",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13027']"
+										},
+										"sink": {
+											"name": "13027",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13028']"
+										},
+										"sink": {
+											"name": "13028",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13029']"
+										},
+										"sink": {
+											"name": "13029",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['ios']['13030']"
+										},
+										"sink": {
+											"name": "13030",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['all']"
+										},
+										"sink": {
+											"name": "all",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['app_wallpaper']"
+										},
+										"sink": {
+											"name": "app_wallpaper",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['app_widgets']"
+										},
+										"sink": {
+											"name": "app_widgets",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['application']"
+										},
+										"sink": {
+											"name": "application",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['art_and_design']"
+										},
+										"sink": {
+											"name": "art_and_design",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['auto_and_vehicles']"
+										},
+										"sink": {
+											"name": "auto_and_vehicles",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['beauty']"
+										},
+										"sink": {
+											"name": "beauty",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['books_and_reference']"
+										},
+										"sink": {
+											"name": "books_and_reference",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['business']"
+										},
+										"sink": {
+											"name": "business",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['comics']"
+										},
+										"sink": {
+											"name": "comics",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['communication']"
+										},
+										"sink": {
+											"name": "communication",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['dating']"
+										},
+										"sink": {
+											"name": "dating",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['education']"
+										},
+										"sink": {
+											"name": "education",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['entertainment']"
+										},
+										"sink": {
+											"name": "entertainment",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['events']"
+										},
+										"sink": {
+											"name": "events",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['family']"
+										},
+										"sink": {
+											"name": "family",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['family_action']"
+										},
+										"sink": {
+											"name": "family_action",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['family_braingames']"
+										},
+										"sink": {
+											"name": "family_braingames",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['family_create']"
+										},
+										"sink": {
+											"name": "family_create",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['family_education']"
+										},
+										"sink": {
+											"name": "family_education",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['family_musicvideo']"
+										},
+										"sink": {
+											"name": "family_musicvideo",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['family_pretend']"
+										},
+										"sink": {
+											"name": "family_pretend",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['finance']"
+										},
+										"sink": {
+											"name": "finance",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['food_and_drink']"
+										},
+										"sink": {
+											"name": "food_and_drink",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game']"
+										},
+										"sink": {
+											"name": "game",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_action']"
+										},
+										"sink": {
+											"name": "game_action",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_adventure']"
+										},
+										"sink": {
+											"name": "game_adventure",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_arcade']"
+										},
+										"sink": {
+											"name": "game_arcade",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_board']"
+										},
+										"sink": {
+											"name": "game_board",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_card']"
+										},
+										"sink": {
+											"name": "game_card",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_casino']"
+										},
+										"sink": {
+											"name": "game_casino",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_casual']"
+										},
+										"sink": {
+											"name": "game_casual",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_educational']"
+										},
+										"sink": {
+											"name": "game_educational",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_family']"
+										},
+										"sink": {
+											"name": "game_family",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_music']"
+										},
+										"sink": {
+											"name": "game_music",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_puzzle']"
+										},
+										"sink": {
+											"name": "game_puzzle",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_racing']"
+										},
+										"sink": {
+											"name": "game_racing",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_role_playing']"
+										},
+										"sink": {
+											"name": "game_role_playing",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_simulation']"
+										},
+										"sink": {
+											"name": "game_simulation",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_sports']"
+										},
+										"sink": {
+											"name": "game_sports",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_strategy']"
+										},
+										"sink": {
+											"name": "game_strategy",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_trivia']"
+										},
+										"sink": {
+											"name": "game_trivia",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_wallpaper']"
+										},
+										"sink": {
+											"name": "game_wallpaper",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_widgets']"
+										},
+										"sink": {
+											"name": "game_widgets",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['game_word']"
+										},
+										"sink": {
+											"name": "game_word",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['health_and_fitness']"
+										},
+										"sink": {
+											"name": "health_and_fitness",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['house_and_home']"
+										},
+										"sink": {
+											"name": "house_and_home",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['libraries_and_demo']"
+										},
+										"sink": {
+											"name": "libraries_and_demo",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['lifestyle']"
+										},
+										"sink": {
+											"name": "lifestyle",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['maps_and_navigation']"
+										},
+										"sink": {
+											"name": "maps_and_navigation",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['media_and_video']"
+										},
+										"sink": {
+											"name": "media_and_video",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['medical']"
+										},
+										"sink": {
+											"name": "medical",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['music_and_audio']"
+										},
+										"sink": {
+											"name": "music_and_audio",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['news_and_magazines']"
+										},
+										"sink": {
+											"name": "news_and_magazines",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['parenting']"
+										},
+										"sink": {
+											"name": "parenting",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['personalization']"
+										},
+										"sink": {
+											"name": "personalization",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['photography']"
+										},
+										"sink": {
+											"name": "photography",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['productivity']"
+										},
+										"sink": {
+											"name": "productivity",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['shopping']"
+										},
+										"sink": {
+											"name": "shopping",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['social']"
+										},
+										"sink": {
+											"name": "social",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['sports']"
+										},
+										"sink": {
+											"name": "sports",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['tools']"
+										},
+										"sink": {
+											"name": "tools",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['transportation']"
+										},
+										"sink": {
+											"name": "transportation",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['travel_and_local']"
+										},
+										"sink": {
+											"name": "travel_and_local",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['video_players']"
+										},
+										"sink": {
+											"name": "video_players",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['category_ids']['android']['weather']"
+										},
+										"sink": {
+											"name": "weather",
+											"type": "String"
+										}
+									}
+								],
+								"collectionReference": "",
+								"mapComplexValuesToString": false
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "HTTP_Sensor_Tower_Categories",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "ASQL_Sensor_Tower_Categories",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Drop categories Raw Table",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_drop_categories_raw]"
+						},
+						"linkedServiceName": {
+							"referenceName": "ASQL_orka_Entertainment",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "Create categories from categories_raw Table",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [
+							{
+								"activity": "Create categories_raw table",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "1.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "Create categories from categories_raw Table",
+								"type": "DataFlowReference"
+							},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							},
+							"traceLevel": "Fine"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/Create categories from categories_raw Table')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Create categories from categories_raw Table')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "ASQL_Sensor_Tower_Categories",
+								"type": "DatasetReference"
+							},
+							"name": "CategoriesRaw"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "ASQL_Sensor_Tower_Categories_Unpivot",
+								"type": "DatasetReference"
+							},
+							"name": "Categories"
+						}
+					],
+					"transformations": [
+						{
+							"name": "Unpivot"
+						}
+					],
+					"script": "source(output(\n\t\t{0} as string,\n\t\t{6000} as string,\n\t\t{6001} as string,\n\t\t{6002} as string,\n\t\t{6003} as string,\n\t\t{6004} as string,\n\t\t{6005} as string,\n\t\t{6006} as string,\n\t\t{6007} as string,\n\t\t{6008} as string,\n\t\t{6009} as string,\n\t\t{6010} as string,\n\t\t{6011} as string,\n\t\t{6012} as string,\n\t\t{6013} as string,\n\t\t{6014} as string,\n\t\t{6015} as string,\n\t\t{6016} as string,\n\t\t{6017} as string,\n\t\t{6018} as string,\n\t\t{6020} as string,\n\t\t{6021} as string,\n\t\t{6022} as string,\n\t\t{6023} as string,\n\t\t{6024} as string,\n\t\t{6026} as string,\n\t\t{6027} as string,\n\t\t{7001} as string,\n\t\t{7002} as string,\n\t\t{7003} as string,\n\t\t{7004} as string,\n\t\t{7005} as string,\n\t\t{7006} as string,\n\t\t{7007} as string,\n\t\t{7008} as string,\n\t\t{7009} as string,\n\t\t{7011} as string,\n\t\t{7012} as string,\n\t\t{7013} as string,\n\t\t{7014} as string,\n\t\t{7015} as string,\n\t\t{7016} as string,\n\t\t{7017} as string,\n\t\t{7018} as string,\n\t\t{7019} as string,\n\t\t{9007} as string,\n\t\t{10000} as string,\n\t\t{10001} as string,\n\t\t{10002} as string,\n\t\t{13001} as string,\n\t\t{13002} as string,\n\t\t{13003} as string,\n\t\t{13004} as string,\n\t\t{13005} as string,\n\t\t{13006} as string,\n\t\t{13007} as string,\n\t\t{13008} as string,\n\t\t{13009} as string,\n\t\t{13010} as string,\n\t\t{13011} as string,\n\t\t{13012} as string,\n\t\t{13013} as string,\n\t\t{13014} as string,\n\t\t{13015} as string,\n\t\t{13017} as string,\n\t\t{13018} as string,\n\t\t{13019} as string,\n\t\t{13020} as string,\n\t\t{13021} as string,\n\t\t{13023} as string,\n\t\t{13024} as string,\n\t\t{13025} as string,\n\t\t{13026} as string,\n\t\t{13027} as string,\n\t\t{13028} as string,\n\t\t{13029} as string,\n\t\t{13030} as string,\n\t\tall as string,\n\t\tapp_wallpaper as string,\n\t\tapp_widgets as string,\n\t\tapplication as string,\n\t\tart_and_design as string,\n\t\tauto_and_vehicles as string,\n\t\tbeauty as string,\n\t\tbooks_and_reference as string,\n\t\tbusiness as string,\n\t\tcomics as string,\n\t\tcommunication as string,\n\t\tdating as string,\n\t\teducation as string,\n\t\tentertainment as string,\n\t\tevents as string,\n\t\tfamily as string,\n\t\tfamily_action as string,\n\t\tfamily_braingames as string,\n\t\tfamily_create as string,\n\t\tfamily_education as string,\n\t\tfamily_musicvideo as string,\n\t\tfamily_pretend as string,\n\t\tfinance as string,\n\t\tfood_and_drink as string,\n\t\tgame as string,\n\t\tgame_action as string,\n\t\tgame_adventure as string,\n\t\tgame_arcade as string,\n\t\tgame_board as string,\n\t\tgame_card as string,\n\t\tgame_casino as string,\n\t\tgame_casual as string,\n\t\tgame_educational as string,\n\t\tgame_family as string,\n\t\tgame_music as string,\n\t\tgame_puzzle as string,\n\t\tgame_racing as string,\n\t\tgame_role_playing as string,\n\t\tgame_simulation as string,\n\t\tgame_sports as string,\n\t\tgame_strategy as string,\n\t\tgame_trivia as string,\n\t\tgame_wallpaper as string,\n\t\tgame_widgets as string,\n\t\tgame_word as string,\n\t\thealth_and_fitness as string,\n\t\thouse_and_home as string,\n\t\tlibraries_and_demo as string,\n\t\tlifestyle as string,\n\t\tmaps_and_navigation as string,\n\t\tmedia_and_video as string,\n\t\tmedical as string,\n\t\tmusic_and_audio as string,\n\t\tnews_and_magazines as string,\n\t\tparenting as string,\n\t\tpersonalization as string,\n\t\tphotography as string,\n\t\tproductivity as string,\n\t\tshopping as string,\n\t\tsocial as string,\n\t\tsports as string,\n\t\ttools as string,\n\t\ttransportation as string,\n\t\ttravel_and_local as string,\n\t\tvideo_players as string,\n\t\tweather as string,\n\t\tid as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'NONE',\n\tformat: 'table') ~> CategoriesRaw\nCategoriesRaw unpivot(output(\n\t\tCategory_ID as string,\n\t\tCategory_Name as string\n\t),\n\tungroupBy(id),\n\tlateral: false,\n\tignoreNullPivots: false) ~> Unpivot\nUnpivot sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> Categories"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

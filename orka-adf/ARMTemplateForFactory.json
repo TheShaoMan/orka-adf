@@ -41,482 +41,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/Lego_ADLS_to_ASQL')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Extract Themes data from Azure Data Lake Storage, add a column, and load the data into Azure SQL Database",
-				"activities": [
-					{
-						"name": "Copy data from ADLS to ASQL",
-						"description": "Copy data from Azure Data Lake Storage to Azure SQL Server",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink",
-								"writeBehavior": "insert",
-								"tableOption": "autoCreate",
-								"disableMetricsCollection": false
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "ADLS_Lego",
-								"type": "DatasetReference",
-								"parameters": {
-									"FileName": {
-										"value": "@pipeline().parameters.FileName",
-										"type": "Expression"
-									}
-								}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "ASQL_Lego",
-								"type": "DatasetReference",
-								"parameters": {
-									"FileName": {
-										"value": "@pipeline().parameters.FileName",
-										"type": "Expression"
-									}
-								}
-							}
-						]
-					}
-				],
-				"parameters": {
-					"FileName": {
-						"type": "String",
-						"defaultValue": "FileName"
-					}
-				},
-				"annotations": [],
-				"lastPublishTime": "2021-07-19T07:23:15Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ADLS_Lego')]",
-				"[concat(variables('factoryId'), '/datasets/ASQL_Lego')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Lego_HTTP_to_ADLS')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy CSV from HTTP to ADLS",
-						"description": "Copy CSV from Rebrickable to Azure Data Lake Storage",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "colors.csv.gz"
-							},
-							{
-								"name": "Destination",
-								"value": "lego//colors.csv"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings",
-									"skipLineCount": "0"
-								}
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".txt"
-								}
-							},
-							"enableStaging": false,
-							"enableSkipIncompatibleRow": true,
-							"logSettings": {
-								"enableCopyActivityLog": true,
-								"copyActivityLogSettings": {
-									"logLevel": "Warning",
-									"enableReliableLogging": false
-								},
-								"logLocationSettings": {
-									"linkedServiceName": {
-										"referenceName": "ADLS_orka",
-										"type": "LinkedServiceReference"
-									},
-									"path": "lego/errors"
-								}
-							},
-							"dataIntegrationUnits": 2
-						},
-						"inputs": [
-							{
-								"referenceName": "HTTP_Lego",
-								"type": "DatasetReference",
-								"parameters": {
-									"FileName": {
-										"value": "@pipeline().parameters.FileName",
-										"type": "Expression"
-									}
-								}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "ADLS_Lego",
-								"type": "DatasetReference",
-								"parameters": {
-									"FileName": {
-										"value": "@pipeline().parameters.FileName",
-										"type": "Expression"
-									}
-								}
-							}
-						]
-					}
-				],
-				"parameters": {
-					"FileName": {
-						"type": "String",
-						"defaultValue": "FileName"
-					}
-				},
-				"annotations": [],
-				"lastPublishTime": "2021-07-20T01:25:34Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/HTTP_Lego')]",
-				"[concat(variables('factoryId'), '/datasets/ADLS_Lego')]",
-				"[concat(variables('factoryId'), '/linkedServices/ADLS_orka')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LoadMainorAllFiles')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "ForEach File",
-						"type": "ForEach",
-						"dependsOn": [
-							{
-								"activity": "Filter Active Files",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"items": {
-								"value": "activity('Lookup Configuration File').output.value",
-								"type": "Expression"
-							},
-							"activities": [
-								{
-									"name": "Lego_HTTP_to_ADLS",
-									"type": "ExecutePipeline",
-									"dependsOn": [],
-									"userProperties": [],
-									"typeProperties": {
-										"pipeline": {
-											"referenceName": "Lego_HTTP_to_ADLS",
-											"type": "PipelineReference"
-										},
-										"waitOnCompletion": true,
-										"parameters": {
-											"FileName": {
-												"value": "@item().SourceFileName",
-												"type": "Expression"
-											}
-										}
-									}
-								}
-							]
-						}
-					},
-					{
-						"name": "Lookup Configuration File",
-						"type": "Lookup",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"dataset": {
-								"referenceName": "ADLS_Lego_ConfigurationFile",
-								"type": "DatasetReference",
-								"parameters": {}
-							},
-							"firstRowOnly": false
-						}
-					},
-					{
-						"name": "Filter Active Files",
-						"type": "Filter",
-						"dependsOn": [
-							{
-								"activity": "Lookup Configuration File",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"items": {
-								"value": "@activity('Lookup Configuration File').output.value",
-								"type": "Expression"
-							},
-							"condition": {
-								"value": "@equals(item().IsActive, '1')",
-								"type": "Expression"
-							}
-						}
-					}
-				],
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ADLS_Lego_ConfigurationFile')]",
-				"[concat(variables('factoryId'), '/pipelines/Lego_HTTP_to_ADLS')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Orchestration_Lego')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Lego_HTTP_to_ADLS_Themes",
-						"description": "",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "Lego_HTTP_to_ADLS",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"FileName": {
-									"value": "@pipeline().parameters.FileName",
-									"type": "Expression"
-								}
-							}
-						}
-					},
-					{
-						"name": "Lego_ADLS_to_ASQL_Themes",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "Lego_HTTP_to_ADLS_Themes",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "Lego_ADLS_to_ASQL",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"FileName": {
-									"value": "@pipeline().parameters.FileName",
-									"type": "Expression"
-								}
-							}
-						}
-					}
-				],
-				"parameters": {
-					"FileName": {
-						"type": "String",
-						"defaultValue": "FileName"
-					}
-				},
-				"annotations": [],
-				"lastPublishTime": "2021-07-20T00:19:10Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/Lego_HTTP_to_ADLS')]",
-				"[concat(variables('factoryId'), '/pipelines/Lego_ADLS_to_ASQL')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Lookup Configuration File",
-						"type": "Lookup",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"dataset": {
-								"referenceName": "HTTP_Lego",
-								"type": "DatasetReference",
-								"parameters": {
-									"FileName": "FileName"
-								}
-							},
-							"firstRowOnly": true
-						}
-					},
-					{
-						"name": "Lookup Configuration Table",
-						"type": "Lookup",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "AzureSqlSource",
-								"sqlReaderQuery": "SELECT * FROM etl.ConfigurationTable WHERE IsActive = 1;",
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
-							},
-							"dataset": {
-								"referenceName": "ASQL_Lego_ConfigurationTable",
-								"type": "DatasetReference",
-								"parameters": {}
-							},
-							"firstRowOnly": false
-						}
-					},
-					{
-						"name": "Execute Pipeline1",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "Lookup Configuration File",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "Lego_HTTP_to_ADLS",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"FileName": {
-									"value": "@activity('Lookup Configuration File').output.firstRow.SourceFileName",
-									"type": "Expression"
-								}
-							}
-						}
-					}
-				],
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/HTTP_Lego')]",
-				"[concat(variables('factoryId'), '/datasets/ASQL_Lego_ConfigurationTable')]",
-				"[concat(variables('factoryId'), '/pipelines/Lego_HTTP_to_ADLS')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/pipeline3')]",
+			"name": "[concat(parameters('factoryName'), '/Generate categories Table from JSON')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -526,7 +51,7 @@
 						"type": "Copy",
 						"dependsOn": [
 							{
-								"activity": "Drop Categories Raw Table",
+								"activity": "Drop categories_waw Table",
 								"dependencyConditions": [
 									"Succeeded"
 								]
@@ -1878,7 +1403,7 @@
 						]
 					},
 					{
-						"name": "Drop Categories Raw Table",
+						"name": "Drop categories_waw Table",
 						"type": "SqlServerStoredProcedure",
 						"dependsOn": [],
 						"policy": {
@@ -1896,6 +1421,43 @@
 							"referenceName": "ASQL_orka_Entertainment",
 							"type": "LinkedServiceReference"
 						}
+					},
+					{
+						"name": "Create categories from categories_raw Table",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [
+							{
+								"activity": "Create categories_raw table",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "1.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "Create categories from categories_raw Table",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"CategoriesRaw": {},
+									"Categories": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							},
+							"traceLevel": "Fine"
+						}
 					}
 				],
 				"annotations": []
@@ -1903,7 +1465,483 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/HTTP_Sensor_Tower_Categories')]",
 				"[concat(variables('factoryId'), '/datasets/ASQL_Sensor_Tower_Categories')]",
-				"[concat(variables('factoryId'), '/linkedServices/ASQL_orka_Entertainment')]"
+				"[concat(variables('factoryId'), '/linkedServices/ASQL_orka_Entertainment')]",
+				"[concat(variables('factoryId'), '/dataflows/Create categories from categories_raw Table')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Lego_ADLS_to_ASQL')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Extract Themes data from Azure Data Lake Storage, add a column, and load the data into Azure SQL Database",
+				"activities": [
+					{
+						"name": "Copy data from ADLS to ASQL",
+						"description": "Copy data from Azure Data Lake Storage to Azure SQL Server",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ADLS_Lego",
+								"type": "DatasetReference",
+								"parameters": {
+									"FileName": {
+										"value": "@pipeline().parameters.FileName",
+										"type": "Expression"
+									}
+								}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "ASQL_Lego",
+								"type": "DatasetReference",
+								"parameters": {
+									"FileName": {
+										"value": "@pipeline().parameters.FileName",
+										"type": "Expression"
+									}
+								}
+							}
+						]
+					}
+				],
+				"parameters": {
+					"FileName": {
+						"type": "String",
+						"defaultValue": "FileName"
+					}
+				},
+				"annotations": [],
+				"lastPublishTime": "2021-07-19T07:23:15Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/ADLS_Lego')]",
+				"[concat(variables('factoryId'), '/datasets/ASQL_Lego')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Lego_HTTP_to_ADLS')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy CSV from HTTP to ADLS",
+						"description": "Copy CSV from Rebrickable to Azure Data Lake Storage",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "colors.csv.gz"
+							},
+							{
+								"name": "Destination",
+								"value": "lego//colors.csv"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "HttpReadSettings",
+									"requestMethod": "GET"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings",
+									"skipLineCount": "0"
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"enableSkipIncompatibleRow": true,
+							"logSettings": {
+								"enableCopyActivityLog": true,
+								"copyActivityLogSettings": {
+									"logLevel": "Warning",
+									"enableReliableLogging": false
+								},
+								"logLocationSettings": {
+									"linkedServiceName": {
+										"referenceName": "ADLS_orka",
+										"type": "LinkedServiceReference"
+									},
+									"path": "lego/errors"
+								}
+							},
+							"dataIntegrationUnits": 2
+						},
+						"inputs": [
+							{
+								"referenceName": "HTTP_Lego",
+								"type": "DatasetReference",
+								"parameters": {
+									"FileName": {
+										"value": "@pipeline().parameters.FileName",
+										"type": "Expression"
+									}
+								}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "ADLS_Lego",
+								"type": "DatasetReference",
+								"parameters": {
+									"FileName": {
+										"value": "@pipeline().parameters.FileName",
+										"type": "Expression"
+									}
+								}
+							}
+						]
+					}
+				],
+				"parameters": {
+					"FileName": {
+						"type": "String",
+						"defaultValue": "FileName"
+					}
+				},
+				"annotations": [],
+				"lastPublishTime": "2021-07-20T01:25:34Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/HTTP_Lego')]",
+				"[concat(variables('factoryId'), '/datasets/ADLS_Lego')]",
+				"[concat(variables('factoryId'), '/linkedServices/ADLS_orka')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LoadMainorAllFiles')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "ForEach File",
+						"type": "ForEach",
+						"dependsOn": [
+							{
+								"activity": "Filter Active Files",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "activity('Lookup Configuration File').output.value",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "Lego_HTTP_to_ADLS",
+									"type": "ExecutePipeline",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"pipeline": {
+											"referenceName": "Lego_HTTP_to_ADLS",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true,
+										"parameters": {
+											"FileName": {
+												"value": "@item().SourceFileName",
+												"type": "Expression"
+											}
+										}
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "Lookup Configuration File",
+						"type": "Lookup",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"dataset": {
+								"referenceName": "ADLS_Lego_ConfigurationFile",
+								"type": "DatasetReference",
+								"parameters": {}
+							},
+							"firstRowOnly": false
+						}
+					},
+					{
+						"name": "Filter Active Files",
+						"type": "Filter",
+						"dependsOn": [
+							{
+								"activity": "Lookup Configuration File",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('Lookup Configuration File').output.value",
+								"type": "Expression"
+							},
+							"condition": {
+								"value": "@equals(item().IsActive, '1')",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/ADLS_Lego_ConfigurationFile')]",
+				"[concat(variables('factoryId'), '/pipelines/Lego_HTTP_to_ADLS')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Orchestration_Lego')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Lego_HTTP_to_ADLS_Themes",
+						"description": "",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "Lego_HTTP_to_ADLS",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {
+								"FileName": {
+									"value": "@pipeline().parameters.FileName",
+									"type": "Expression"
+								}
+							}
+						}
+					},
+					{
+						"name": "Lego_ADLS_to_ASQL_Themes",
+						"type": "ExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "Lego_HTTP_to_ADLS_Themes",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "Lego_ADLS_to_ASQL",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {
+								"FileName": {
+									"value": "@pipeline().parameters.FileName",
+									"type": "Expression"
+								}
+							}
+						}
+					}
+				],
+				"parameters": {
+					"FileName": {
+						"type": "String",
+						"defaultValue": "FileName"
+					}
+				},
+				"annotations": [],
+				"lastPublishTime": "2021-07-20T00:19:10Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/Lego_HTTP_to_ADLS')]",
+				"[concat(variables('factoryId'), '/pipelines/Lego_ADLS_to_ASQL')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Lookup Configuration File",
+						"type": "Lookup",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "HttpReadSettings",
+									"requestMethod": "GET"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"dataset": {
+								"referenceName": "HTTP_Lego",
+								"type": "DatasetReference",
+								"parameters": {
+									"FileName": "FileName"
+								}
+							},
+							"firstRowOnly": true
+						}
+					},
+					{
+						"name": "Lookup Configuration Table",
+						"type": "Lookup",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "SELECT * FROM etl.ConfigurationTable WHERE IsActive = 1;",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"dataset": {
+								"referenceName": "ASQL_Lego_ConfigurationTable",
+								"type": "DatasetReference",
+								"parameters": {}
+							},
+							"firstRowOnly": false
+						}
+					},
+					{
+						"name": "Execute Pipeline1",
+						"type": "ExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "Lookup Configuration File",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "Lego_HTTP_to_ADLS",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {
+								"FileName": {
+									"value": "@activity('Lookup Configuration File').output.firstRow.SourceFileName",
+									"type": "Expression"
+								}
+							}
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/HTTP_Lego')]",
+				"[concat(variables('factoryId'), '/datasets/ASQL_Lego_ConfigurationTable')]",
+				"[concat(variables('factoryId'), '/pipelines/Lego_HTTP_to_ADLS')]"
 			]
 		},
 		{
@@ -2722,7 +2760,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/dataflow1')]",
+			"name": "[concat(parameters('factoryName'), '/Create categories from categories_raw Table')]",
 			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -2734,7 +2772,7 @@
 								"referenceName": "ASQL_Sensor_Tower_Categories",
 								"type": "DatasetReference"
 							},
-							"name": "source1"
+							"name": "CategoriesRaw"
 						}
 					],
 					"sinks": [
@@ -2743,15 +2781,15 @@
 								"referenceName": "ASQL_Sensor_Tower_Categories_Unpivot",
 								"type": "DatasetReference"
 							},
-							"name": "sink1"
+							"name": "Categories"
 						}
 					],
 					"transformations": [
 						{
-							"name": "Unpivot1"
+							"name": "Unpivot"
 						}
 					],
-					"script": "source(output(\n\t\t{0} as string,\n\t\t{6000} as string,\n\t\t{6001} as string,\n\t\t{6002} as string,\n\t\t{6003} as string,\n\t\t{6004} as string,\n\t\t{6005} as string,\n\t\t{6006} as string,\n\t\t{6007} as string,\n\t\t{6008} as string,\n\t\t{6009} as string,\n\t\t{6010} as string,\n\t\t{6011} as string,\n\t\t{6012} as string,\n\t\t{6013} as string,\n\t\t{6014} as string,\n\t\t{6015} as string,\n\t\t{6016} as string,\n\t\t{6017} as string,\n\t\t{6018} as string,\n\t\t{6020} as string,\n\t\t{6021} as string,\n\t\t{6022} as string,\n\t\t{6023} as string,\n\t\t{6024} as string,\n\t\t{6026} as string,\n\t\t{6027} as string,\n\t\t{7001} as string,\n\t\t{7002} as string,\n\t\t{7003} as string,\n\t\t{7004} as string,\n\t\t{7005} as string,\n\t\t{7006} as string,\n\t\t{7007} as string,\n\t\t{7008} as string,\n\t\t{7009} as string,\n\t\t{7011} as string,\n\t\t{7012} as string,\n\t\t{7013} as string,\n\t\t{7014} as string,\n\t\t{7015} as string,\n\t\t{7016} as string,\n\t\t{7017} as string,\n\t\t{7018} as string,\n\t\t{7019} as string,\n\t\t{9007} as string,\n\t\t{10000} as string,\n\t\t{10001} as string,\n\t\t{10002} as string,\n\t\t{13001} as string,\n\t\t{13002} as string,\n\t\t{13003} as string,\n\t\t{13004} as string,\n\t\t{13005} as string,\n\t\t{13006} as string,\n\t\t{13007} as string,\n\t\t{13008} as string,\n\t\t{13009} as string,\n\t\t{13010} as string,\n\t\t{13011} as string,\n\t\t{13012} as string,\n\t\t{13013} as string,\n\t\t{13014} as string,\n\t\t{13015} as string,\n\t\t{13017} as string,\n\t\t{13018} as string,\n\t\t{13019} as string,\n\t\t{13020} as string,\n\t\t{13021} as string,\n\t\t{13023} as string,\n\t\t{13024} as string,\n\t\t{13025} as string,\n\t\t{13026} as string,\n\t\t{13027} as string,\n\t\t{13028} as string,\n\t\t{13029} as string,\n\t\t{13030} as string,\n\t\tall as string,\n\t\tapp_wallpaper as string,\n\t\tapp_widgets as string,\n\t\tapplication as string,\n\t\tart_and_design as string,\n\t\tauto_and_vehicles as string,\n\t\tbeauty as string,\n\t\tbooks_and_reference as string,\n\t\tbusiness as string,\n\t\tcomics as string,\n\t\tcommunication as string,\n\t\tdating as string,\n\t\teducation as string,\n\t\tentertainment as string,\n\t\tevents as string,\n\t\tfamily as string,\n\t\tfamily_action as string,\n\t\tfamily_braingames as string,\n\t\tfamily_create as string,\n\t\tfamily_education as string,\n\t\tfamily_musicvideo as string,\n\t\tfamily_pretend as string,\n\t\tfinance as string,\n\t\tfood_and_drink as string,\n\t\tgame as string,\n\t\tgame_action as string,\n\t\tgame_adventure as string,\n\t\tgame_arcade as string,\n\t\tgame_board as string,\n\t\tgame_card as string,\n\t\tgame_casino as string,\n\t\tgame_casual as string,\n\t\tgame_educational as string,\n\t\tgame_family as string,\n\t\tgame_music as string,\n\t\tgame_puzzle as string,\n\t\tgame_racing as string,\n\t\tgame_role_playing as string,\n\t\tgame_simulation as string,\n\t\tgame_sports as string,\n\t\tgame_strategy as string,\n\t\tgame_trivia as string,\n\t\tgame_wallpaper as string,\n\t\tgame_widgets as string,\n\t\tgame_word as string,\n\t\thealth_and_fitness as string,\n\t\thouse_and_home as string,\n\t\tlibraries_and_demo as string,\n\t\tlifestyle as string,\n\t\tmaps_and_navigation as string,\n\t\tmedia_and_video as string,\n\t\tmedical as string,\n\t\tmusic_and_audio as string,\n\t\tnews_and_magazines as string,\n\t\tparenting as string,\n\t\tpersonalization as string,\n\t\tphotography as string,\n\t\tproductivity as string,\n\t\tshopping as string,\n\t\tsocial as string,\n\t\tsports as string,\n\t\ttools as string,\n\t\ttransportation as string,\n\t\ttravel_and_local as string,\n\t\tvideo_players as string,\n\t\tweather as string,\n\t\tid as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'NONE',\n\tformat: 'table') ~> source1\nsource1 unpivot(output(\n\t\tCategory_ID as string,\n\t\tCategory_Name as string\n\t),\n\tungroupBy(id),\n\tlateral: false,\n\tignoreNullPivots: false) ~> Unpivot1\nUnpivot1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> sink1"
+					"script": "source(output(\n\t\t{0} as string,\n\t\t{6000} as string,\n\t\t{6001} as string,\n\t\t{6002} as string,\n\t\t{6003} as string,\n\t\t{6004} as string,\n\t\t{6005} as string,\n\t\t{6006} as string,\n\t\t{6007} as string,\n\t\t{6008} as string,\n\t\t{6009} as string,\n\t\t{6010} as string,\n\t\t{6011} as string,\n\t\t{6012} as string,\n\t\t{6013} as string,\n\t\t{6014} as string,\n\t\t{6015} as string,\n\t\t{6016} as string,\n\t\t{6017} as string,\n\t\t{6018} as string,\n\t\t{6020} as string,\n\t\t{6021} as string,\n\t\t{6022} as string,\n\t\t{6023} as string,\n\t\t{6024} as string,\n\t\t{6026} as string,\n\t\t{6027} as string,\n\t\t{7001} as string,\n\t\t{7002} as string,\n\t\t{7003} as string,\n\t\t{7004} as string,\n\t\t{7005} as string,\n\t\t{7006} as string,\n\t\t{7007} as string,\n\t\t{7008} as string,\n\t\t{7009} as string,\n\t\t{7011} as string,\n\t\t{7012} as string,\n\t\t{7013} as string,\n\t\t{7014} as string,\n\t\t{7015} as string,\n\t\t{7016} as string,\n\t\t{7017} as string,\n\t\t{7018} as string,\n\t\t{7019} as string,\n\t\t{9007} as string,\n\t\t{10000} as string,\n\t\t{10001} as string,\n\t\t{10002} as string,\n\t\t{13001} as string,\n\t\t{13002} as string,\n\t\t{13003} as string,\n\t\t{13004} as string,\n\t\t{13005} as string,\n\t\t{13006} as string,\n\t\t{13007} as string,\n\t\t{13008} as string,\n\t\t{13009} as string,\n\t\t{13010} as string,\n\t\t{13011} as string,\n\t\t{13012} as string,\n\t\t{13013} as string,\n\t\t{13014} as string,\n\t\t{13015} as string,\n\t\t{13017} as string,\n\t\t{13018} as string,\n\t\t{13019} as string,\n\t\t{13020} as string,\n\t\t{13021} as string,\n\t\t{13023} as string,\n\t\t{13024} as string,\n\t\t{13025} as string,\n\t\t{13026} as string,\n\t\t{13027} as string,\n\t\t{13028} as string,\n\t\t{13029} as string,\n\t\t{13030} as string,\n\t\tall as string,\n\t\tapp_wallpaper as string,\n\t\tapp_widgets as string,\n\t\tapplication as string,\n\t\tart_and_design as string,\n\t\tauto_and_vehicles as string,\n\t\tbeauty as string,\n\t\tbooks_and_reference as string,\n\t\tbusiness as string,\n\t\tcomics as string,\n\t\tcommunication as string,\n\t\tdating as string,\n\t\teducation as string,\n\t\tentertainment as string,\n\t\tevents as string,\n\t\tfamily as string,\n\t\tfamily_action as string,\n\t\tfamily_braingames as string,\n\t\tfamily_create as string,\n\t\tfamily_education as string,\n\t\tfamily_musicvideo as string,\n\t\tfamily_pretend as string,\n\t\tfinance as string,\n\t\tfood_and_drink as string,\n\t\tgame as string,\n\t\tgame_action as string,\n\t\tgame_adventure as string,\n\t\tgame_arcade as string,\n\t\tgame_board as string,\n\t\tgame_card as string,\n\t\tgame_casino as string,\n\t\tgame_casual as string,\n\t\tgame_educational as string,\n\t\tgame_family as string,\n\t\tgame_music as string,\n\t\tgame_puzzle as string,\n\t\tgame_racing as string,\n\t\tgame_role_playing as string,\n\t\tgame_simulation as string,\n\t\tgame_sports as string,\n\t\tgame_strategy as string,\n\t\tgame_trivia as string,\n\t\tgame_wallpaper as string,\n\t\tgame_widgets as string,\n\t\tgame_word as string,\n\t\thealth_and_fitness as string,\n\t\thouse_and_home as string,\n\t\tlibraries_and_demo as string,\n\t\tlifestyle as string,\n\t\tmaps_and_navigation as string,\n\t\tmedia_and_video as string,\n\t\tmedical as string,\n\t\tmusic_and_audio as string,\n\t\tnews_and_magazines as string,\n\t\tparenting as string,\n\t\tpersonalization as string,\n\t\tphotography as string,\n\t\tproductivity as string,\n\t\tshopping as string,\n\t\tsocial as string,\n\t\tsports as string,\n\t\ttools as string,\n\t\ttransportation as string,\n\t\ttravel_and_local as string,\n\t\tvideo_players as string,\n\t\tweather as string,\n\t\tid as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'NONE',\n\tformat: 'table') ~> CategoriesRaw\nCategoriesRaw unpivot(output(\n\t\tCategory_ID as string,\n\t\tCategory_Name as string\n\t),\n\tungroupBy(id),\n\tlateral: false,\n\tignoreNullPivots: false) ~> Unpivot\nUnpivot sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> Categories"
 				}
 			},
 			"dependsOn": [
