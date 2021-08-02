@@ -1,5 +1,5 @@
 {
-	"name": "pipeline3",
+	"name": "Generate categories Table from JSON",
 	"properties": {
 		"activities": [
 			{
@@ -1374,6 +1374,37 @@
 				"linkedServiceName": {
 					"referenceName": "ASQL_orka_Entertainment",
 					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Create categories from categories_raw Table",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [
+					{
+						"activity": "Create categories_raw table",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "1.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "Create categories from categories_raw Table",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
 				}
 			}
 		],
