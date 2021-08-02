@@ -1351,7 +1351,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ASQL_Sensor_Tower_Categories",
+						"referenceName": "ASQL_Sensor_Tower_Categories_Raw",
 						"type": "DatasetReference"
 					}
 				]

@@ -1,5 +1,5 @@
 {
-	"name": "ASQL_Sensor_Tower_Categories",
+	"name": "ASQL_Sensor_Tower_Categories_Raw",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ASQL_orka_Entertainment",
@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "categories"
+			"table": "categories_raw"
 		}
 	}
 }

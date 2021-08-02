@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "ASQL_Sensor_Tower_Categories",
+						"referenceName": "ASQL_Sensor_Tower_Categories_Raw",
 						"type": "DatasetReference"
 					},
 					"name": "CategoriesRaw"
@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "ASQL_Sensor_Tower_Categories_Unpivot",
+						"referenceName": "ASQL_Sensor_Tower_Categories",
 						"type": "DatasetReference"
 					},
 					"name": "Categories"
