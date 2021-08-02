@@ -1381,7 +1381,7 @@
 				"type": "ExecuteDataFlow",
 				"dependsOn": [
 					{
-						"activity": "Create categories_raw Table",
+						"activity": "Truncate categories Table",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -1405,6 +1405,33 @@
 						"computeType": "General"
 					},
 					"traceLevel": "Fine"
+				}
+			},
+			{
+				"name": "Truncate categories Table",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Create categories_raw Table",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[sp_truncate_categories]"
+				},
+				"linkedServiceName": {
+					"referenceName": "ASQL_orka_Entertainment",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
