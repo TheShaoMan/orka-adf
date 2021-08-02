@@ -1,5 +1,5 @@
 {
-	"name": "ASQL_Sensor_Tower_Categories",
+	"name": "ASQL_Sensor_Tower_Categories_Unpivot",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ASQL_orka_Entertainment",
@@ -9,8 +9,8 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "categories_raw"
+			"schema": "SensorTower",
+			"table": "categories_unpivot"
 		}
 	}
 }
