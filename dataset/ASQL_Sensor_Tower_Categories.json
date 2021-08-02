@@ -587,8 +587,8 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "sensortower",
-			"table": "categories"
+			"schema": "dbo",
+			"table": "categories_raw"
 		}
 	}
 }
